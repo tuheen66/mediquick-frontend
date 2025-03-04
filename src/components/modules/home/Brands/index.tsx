@@ -36,8 +36,8 @@ const Brands = () => {
           <Image
             src={brand1}
             alt="brand1"
-            width={100}
-            height={100}
+            width={300}
+            height={300}
             className="w-36"
           />
         </SwiperSlide>
@@ -45,8 +45,8 @@ const Brands = () => {
           <Image
             src={brand2}
             alt="brand1"
-            width={100}
-            height={100}
+            width={300}
+            height={300}
             className="w-36"
           />
         </SwiperSlide>
@@ -63,8 +63,8 @@ const Brands = () => {
           <Image
             src={brand4}
             alt="brand1"
-            width={100}
-            height={100}
+            width={300}
+            height={300}
             className="w-36"
           />
         </SwiperSlide>
@@ -72,8 +72,8 @@ const Brands = () => {
           <Image
             src={brand5}
             alt="brand1"
-            width={100}
-            height={100}
+            width={300}
+            height={300}
             className="w-36"
           />
         </SwiperSlide>
@@ -81,8 +81,8 @@ const Brands = () => {
           <Image
             src={brand6}
             alt="brand1"
-            width={100}
-            height={100}
+            width={300}
+            height={300}
             className="w-36"
           />
         </SwiperSlide>
@@ -90,8 +90,8 @@ const Brands = () => {
           <Image
             src={brand7}
             alt="brand1"
-            width={100}
-            height={100}
+            width={300}
+            height={300}
             className="w-36"
           />
         </SwiperSlide>
@@ -99,8 +99,8 @@ const Brands = () => {
           <Image
             src={brand8}
             alt="brand1"
-            width={100}
-            height={100}
+            width={300}
+            height={300}
             className="w-36"
           />
         </SwiperSlide>
@@ -110,7 +110,7 @@ const Brands = () => {
             alt="brand1"
             width={100}
             height={100}
-            className="mt-5"
+            className=" w-28"
           />
         </SwiperSlide>
       </Swiper>
