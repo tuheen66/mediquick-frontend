@@ -35,7 +35,7 @@ const MedicineCard = ({ medicine }: { medicine: IMedicine }) => {
       </div>
       <div className="mt-4 justify-center">
         <Link href={`/medicine/${medicine._id}`}>
-          <Button className="bg-orange-500 hover:bg-orange-800 text-white w-full">
+          <Button className="bg-orange-500 hover:bg-orange-800 text-white w-full cursor-pointer">
             View details
           </Button>
         </Link>
