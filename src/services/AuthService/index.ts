@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import { FieldValues } from "react-hook-form";
 import { jwtDecode } from "jwt-decode";
 import { IUser } from "@/types";
+import { revalidateTag } from "next/cache";
 
 export const registerUser = async (userData: FieldValues) => {
   try {
@@ -65,20 +66,46 @@ export const getCurrentUser = async () => {
   }
 };
 
-export const userProfile = async (userId:IUser) => {
+export const userProfile = async (userId: string) => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API}/auth/profile/${userId}`
-      // {
-      //   next: {
-      //     tags: ["MEDICINE"],
-      //   },
-      // }
+      `${process.env.NEXT_PUBLIC_BASE_API}/auth/profile/${userId}`,
+      {
+        headers: {
+          Authorization: (await cookies()).get("accessToken")!.value || "",
+        },
+
+        next: {
+          tags: ["PROFILE"],
+        },
+      }
     );
     const data = await res.json();
     return data;
   } catch (error: any) {
     return Error(error.message);
+  }
+};
+
+export const updateUser = async (userId: string, userData: IUser) => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_API}/auth/users/${userId}`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: (await cookies()).get("accessToken")!.value || "",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      }
+    );
+    const result = await res.json();
+    revalidateTag("PROFILE");
+
+    return result;
+  } catch (error: any) {
+    return Error(error);
   }
 };
 

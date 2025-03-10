@@ -7,12 +7,10 @@ const CartPage = () => {
   return (
     <div className="">
         <CartBanner/>
-      <div className="flex justify-around">
+      <div className="flex justify-around min-h-screen">
         <CartProduct />
-        <div className=" w-80">
-          <Address />
-          <Payments />
-        </div>
+        <Payments/>
+       
       </div>
     </div>
   );

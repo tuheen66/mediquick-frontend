@@ -96,7 +96,7 @@ const StripeForm = () => {
   };
 
   return (
-    <div>
+    <div className="flex-1">
       <h1 className="mb-4 text-2xl text-center font-semibold text-gray-700">
         Pay Here
       </h1>
@@ -125,7 +125,7 @@ const StripeForm = () => {
             }}
           />
           <button
-            className="bg-[#316881] py-1 rounded-lg w-20 border-none text-white text-lg mt-6 hover:bg-[#0d4763] "
+            className="bg-orange-600 py-1 rounded-lg w-20 border-none text-white text-lg mt-6 hover:bg-orange-800 "
             type="submit"
             disabled={!stripe || !clientSecret}
           >

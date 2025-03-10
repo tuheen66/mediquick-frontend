@@ -1,9 +1,13 @@
+import CustomerOrders from "@/components/customerOrders/CustomerOrders";
+import { getCustomerOrders } from "@/services/OrderService";
 
 
-const OrdersPage = () => {
+const OrdersPage =() => {
+
+    
     return (
-        <div>
-            <h1>Orders page</h1>
+        <div className="mt-12">
+            <CustomerOrders/>
         </div>
     );
 };

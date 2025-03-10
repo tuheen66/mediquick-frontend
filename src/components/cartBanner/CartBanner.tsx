@@ -17,10 +17,11 @@ const CartBanner = () => {
       </div>
       <div className="hero-overlay  rounded-xl "></div>
       <div className="  text-neutral-content">
-        <div className=" my-4 flex justify-between items-center  w-1/2 ">
+        <div className=" my-4 flex justify-between items-center w-1/2 ">
           <h1 className=" text-3xl text-gray-800 font-bold">Your cart</h1>
+
           <Link href={"/shop"}>
-            <Button className="bg-orange-500 hover:bg-orange-800 text-white">
+            <Button className="bg-orange-500 hover:bg-orange-800 text-white w-">
               Buy more
             </Button>
           </Link>

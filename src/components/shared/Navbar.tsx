@@ -1,22 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FiShoppingCart } from "react-icons/fi";
 import logo from "../../assets/images/logo1.jpg";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { useUser } from "@/context/UserContext";
 import { logout } from "@/services/AuthService";
+import { protectedRoutes } from "@/constants";
 
 const Navbar = () => {
   const { user, setIsLoading } = useUser();
-  const pathName = usePathname();
-  // const router = useRouter();
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleLogout = () => {
     logout();
     setIsLoading(true);
+
+    if (protectedRoutes.some((route) => pathname.match(route))) {
+      router.push("/");
+    }
   };
 
   return (
@@ -40,7 +45,7 @@ const Navbar = () => {
           <Link
             href="/shop"
             className={
-              pathName === "/shop"
+              pathname === "/shop"
                 ? " text-orange-500 font-semibold   rounded-lg"
                 : "hover:text-slate-500 hover:underline"
             }
@@ -50,7 +55,7 @@ const Navbar = () => {
           <Link
             href="/profile"
             className={
-              pathName === "/profile"
+              pathname === "/profile"
                 ? " text-orange-500 font-semibold   rounded-lg"
                 : "hover:text-slate-500 hover:underline"
             }
@@ -61,13 +66,26 @@ const Navbar = () => {
           <Link
             href="/orders"
             className={
-              pathName === "/orders"
+              pathname === "/orders"
                 ? " text-orange-500 font-semibold   rounded-lg"
                 : "hover:text-slate-500 hover:underline"
             }
           >
             Orders
           </Link>
+
+          {user?.role === "admin" && (
+            <Link
+              href="/admin"
+              className={
+                pathname === "/admin"
+                  ? " text-orange-500 font-semibold   rounded-lg"
+                  : "hover:text-slate-500 hover:underline"
+              }
+            >
+              Dashboard
+            </Link>
+          )}
         </nav>
 
         <div className="flex justify-center items-center gap-4">
@@ -77,14 +95,14 @@ const Navbar = () => {
 
           {user ? (
             <>
-            <p>{user?.email}</p>
-            <Button
-              onClick={handleLogout}
-              className="bg-orange-500 hover:bg-orange-800 text-white"
+              <p>{user?.email}</p>
+              <Button
+                onClick={handleLogout}
+                className="bg-orange-500 hover:bg-orange-800 text-white"
               >
-              Logout
-            </Button>
-              </>
+                Logout
+              </Button>
+            </>
           ) : (
             <Link href="/login">
               <Button className="bg-orange-500  text-white  hover:bg-orange-800 ">

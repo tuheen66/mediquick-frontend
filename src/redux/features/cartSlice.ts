@@ -63,8 +63,8 @@ const cartSlice = createSlice({
     addShippingAddress: (state, action) => {
       state.shippingAddress = action.payload;
     },
-    prescriptionLink: (state, action) => {
-      state.prescriptionLink = action.payload.prescriptionLink;
+    addPrescriptionLink: (state, action) => {
+      state.prescriptionLink = action.payload;
     },
     clearCart: (state) => {
       state.medicines = [];
@@ -95,6 +95,10 @@ export const orderSelector = (state: RootState) => {
     paymentMethod: "Online",
   };
 };
+
+export const prescriptionLinkSelector = (state:RootState)=>{
+  return state.cart.prescriptionLink
+}
 
 
 //payment
@@ -145,7 +149,7 @@ export const {
   removeOrder,
   addCity,
   addShippingAddress,
-  prescriptionLink,
+  addPrescriptionLink,
   clearCart,
 } = cartSlice.actions;
 

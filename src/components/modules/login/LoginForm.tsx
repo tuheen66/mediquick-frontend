@@ -13,14 +13,17 @@ import { Input } from "@/components/ui/input";
 import { useUser } from "@/context/UserContext";
 import { loginUser } from "@/services/AuthService";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 const LoginForm = () => {
   const form = useForm();
   const router = useRouter();
-  const {setIsLoading}= useUser()
+  const { setIsLoading } = useUser();
+  const searchParams = useSearchParams();
+
+  const redirect = searchParams.get("redirectPath");
 
   const {
     formState: { isSubmitting },
@@ -29,16 +32,17 @@ const LoginForm = () => {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
       const res = await loginUser(data);
-      setIsLoading(true)
+      setIsLoading(true);
       if (res?.success) {
         toast.success(res?.message);
         router.push("/");
+
         //? if redirectPath is available then redirect to that path else redirect to profile page
-        // if (redirect) {
-        //   // router.push(redirect);
-        // } else {
-        //   router.push("/");
-        // }
+        if (redirect) {
+          router.push(redirect);
+        } else {
+          router.push("/profile");
+        }
       } else {
         toast.error(res?.message);
       }

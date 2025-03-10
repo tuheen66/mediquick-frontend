@@ -5,11 +5,11 @@ import {
   incrementOrderQuantity,
   removeOrder,
 } from "@/redux/features/cartSlice";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useAppDispatch } from "@/redux/hooks";
 
 import { Minus, Plus, Trash } from "lucide-react";
 import Image from "next/image";
-import PrescriptionModal from "./PrescriptionModal";
+
 
 const CartProductCard = ({ medicine }: { medicine: CartProduct }) => {
   const dispatch = useAppDispatch();
@@ -80,13 +80,6 @@ const CartProductCard = ({ medicine }: { medicine: CartProduct }) => {
             <Trash className="text-red-500/50" />
           </Button>
         </div>
-      </div>
-      <div>
-        {medicine.prescriptionRequired === "yes" && (
-          <div className="mt-2  ">
-            <PrescriptionModal />
-          </div>
-        )}
       </div>
     </div>
   );

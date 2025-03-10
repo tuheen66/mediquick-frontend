@@ -1,5 +1,13 @@
 "use client";
 import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
   Select,
   SelectContent,
   SelectItem,
@@ -10,26 +18,42 @@ import { Textarea } from "@/components/ui/textarea";
 import { cities } from "@/constants/cities";
 import {
   addCity,
+  addPrescriptionLink,
   addShippingAddress,
   citySelector,
+  orderedMedicinesSelector,
+  prescriptionLinkSelector,
   shippingAddressSelector,
 } from "@/redux/features/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import React, { use } from "react";
+import React, { use, useState } from "react";
 
 const Address = () => {
-  const dispatch = useAppDispatch();
+  const cartProducts = useAppSelector(orderedMedicinesSelector);
+  const prescriptionLink = useAppSelector(prescriptionLinkSelector);
   const selectedCity = useAppSelector(citySelector);
   const shippingAddress = useAppSelector(shippingAddressSelector);
 
+  const dispatch = useAppDispatch();
+
+  
+  const requiresPrescription = cartProducts.some(
+    (item) => item.prescriptionRequired === "yes"
+  );
+
   const handleCitySelect = (city: string) => {
     dispatch(addCity(city));
+  };
+  const handlePrescriptionLink = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(addPrescriptionLink(e.target.value));
+    console.log(prescriptionLink);
   };
 
   const handleShippingAddress = (address: string) => {
     dispatch(addShippingAddress(address));
     console.log(selectedCity);
     console.log(shippingAddress);
+    console.log(prescriptionLink);
   };
 
   return (
@@ -50,11 +74,22 @@ const Address = () => {
               ))}
             </SelectContent>
           </Select>
+
           <Textarea
             onChange={(e) => handleShippingAddress(e.target.value)}
             rows={5}
             className="border-1 border-gray-500 rounded-xl w-full"
           />
+
+          {requiresPrescription && 
+            <div className="grid w-full max-w-sm items-center gap-1.5 mt-6">
+            <Input
+              onChange={handlePrescriptionLink}
+              type="text"
+              placeholder="upload prescription link"
+            />
+          </div>
+          }
         </div>
       </div>
     </div>

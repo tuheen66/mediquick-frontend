@@ -24,7 +24,7 @@ export const createOrder = async (order: IOrder) => {
   }
 };
 
-export const makePaymentIntent = async (data:any) => {
+export const makePaymentIntent = async (data: any) => {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_API}/order/payment/create-payment-intent`,
@@ -40,5 +40,27 @@ export const makePaymentIntent = async (data:any) => {
     return await res.json();
   } catch (error: any) {
     return Error(error);
+  }
+};
+
+export const getCustomerOrders = async (userId: string) => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_API}/order/user/${userId}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: (await cookies()).get("accessToken")!.value || "",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      }
+    );
+
+    const data = await res.json();
+
+    return data;
+  } catch (error: any) {
+    return { success: false, message: error.message };
   }
 };
