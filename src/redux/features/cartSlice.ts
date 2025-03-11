@@ -85,6 +85,8 @@ export const orderSelector = (state: RootState) => {
   return {
     products: state.cart.medicines.map((medicine) => ({
       product: medicine._id,
+      name: medicine.name,
+      image: medicine.image,
       quantity: medicine.orderQuantity,
       prescriptionLink:
         medicine.prescriptionRequired === "yes"
@@ -96,10 +98,9 @@ export const orderSelector = (state: RootState) => {
   };
 };
 
-export const prescriptionLinkSelector = (state:RootState)=>{
-  return state.cart.prescriptionLink
-}
-
+export const prescriptionLinkSelector = (state: RootState) => {
+  return state.cart.prescriptionLink;
+};
 
 //payment
 export const subTotalSelector = (state: RootState) => {

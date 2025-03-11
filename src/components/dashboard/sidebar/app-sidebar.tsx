@@ -34,11 +34,11 @@ const data = {
         },
         {
           title: "Manage Orders",
-          url: "#",
+          url: "/admin/orders",
         },
         {
           title: "Manage Users",
-          url: "#",
+          url: "/admin/users",
         },
       ],
     },
@@ -54,7 +54,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton size="lg" asChild>
               <Link href="/">
                 <div className="grid flex-1 text-center  leading-relaxed">
-                  <h2 className="font-bold text-orange-500 text-2xl">Mediquick</h2>
+                  <h2 className="font-bold text-orange-500 text-2xl">
+                    Mediquick
+                  </h2>
                 </div>
               </Link>
             </SidebarMenuButton>

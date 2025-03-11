@@ -1,5 +1,9 @@
 import Banner from "@/components/modules/home/Banner";
 import Brands from "@/components/modules/home/Brands";
+import FeaturedMedicine from "@/components/modules/home/FeaturedMedicine/FeaturedMedicine";
+import Overview from "@/components/modules/home/Overview/Overview";
+import Reviews from "@/components/modules/home/Reviews/Reviews";
+import Footer from "@/components/shared/Footer";
 
 const HomePage = () => {
   return (
@@ -7,12 +11,18 @@ const HomePage = () => {
       <div>
         <Banner />
       </div>
+      <div>
+        <Overview />
+        <FeaturedMedicine />
+        <Reviews />
+      </div>
       <div className="h-48">
-        <h2 className="text-center text-3xl text-gray-800 pt-4 font-bold">
+        <h2 className="text-center text-3xl text-gray-800 mt-8 font-bold">
           Top Brands
         </h2>
         <Brands />
       </div>
+     
     </div>
   );
 };

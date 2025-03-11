@@ -19,7 +19,6 @@ import Image from "next/image";
 const Brands = () => {
   return (
     <div className="mt-4 bg-gray-200 px-4 rounded-xl">
-        
       <Swiper
         className="mySwiper "
         // install Swiper modules
@@ -27,7 +26,6 @@ const Brands = () => {
         spaceBetween={40}
         slidesPerView={5}
         loop={true}
-        navigation
         autoplay
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}

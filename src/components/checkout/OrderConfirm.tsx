@@ -15,13 +15,15 @@ import {
 import { setTotalPrice } from "@/redux/features/checkoutSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { createOrder } from "@/services/OrderService";
-import { useState } from "react";
+
 
 import { toast } from "sonner";
 
 export type IOrder = {
   products: {
     product: string;
+    name: string;
+    image: string;
     quantity: number;
   }[];
   shippingAddress: string;

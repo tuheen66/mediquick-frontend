@@ -1,9 +1,4 @@
 "use client";
-import { useUser } from "@/context/UserContext";
-
-import { useEffect, useState } from "react";
-import { TOrder } from "@/types";
-import { getCustomerOrders } from "@/services/OrderService";
 import {
   Table,
   TableBody,
@@ -11,44 +6,12 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../ui/table";
+} from "@/components/ui/table";
+import { TOrder } from "@/types";
 import Image from "next/image";
+import React from "react";
 
-const CustomerOrders = () => {
-  const user = useUser();
-
-  const [orders, setOrders] = useState<TOrder[]>([]);
-  const [loading, setLoading] = useState(false);
-
-  const fetchData = async () => {
-    setLoading(true); // Start loading
-
-    try {
-      if (user?.user?.userId) {
-        const orderData = await getCustomerOrders(user.user.userId);
-        console.log("API Response Data:", orderData);
-
-        if (orderData) {
-          setOrders(orderData?.data || []);
-          console.log("Updated Orders State:", orderData.data);
-        } else {
-          console.warn("No data found in response.");
-          setOrders([]);
-        }
-      }
-    } catch (error) {
-      console.error("Error fetching medicines:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-  useEffect(() => {
-    if (user?.user?.userId) {
-      fetchData();
-    }
-  }, [user?.user?.userId]);
-
-  // console.log(user?.user?.userId);
+const UserOrdersHistory = ({ orders }: { orders: TOrder[] }) => {
   return (
     <div>
       <Table>
@@ -115,4 +78,4 @@ const CustomerOrders = () => {
   );
 };
 
-export default CustomerOrders;
+export default UserOrdersHistory;

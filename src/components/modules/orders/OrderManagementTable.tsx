@@ -1,9 +1,4 @@
-"use client";
-import { useUser } from "@/context/UserContext";
-
-import { useEffect, useState } from "react";
-import { TOrder } from "@/types";
-import { getCustomerOrders } from "@/services/OrderService";
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -11,44 +6,13 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../ui/table";
+} from "@/components/ui/table";
+import { TOrder } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
+import { FaRegEdit } from "react-icons/fa";
 
-const CustomerOrders = () => {
-  const user = useUser();
-
-  const [orders, setOrders] = useState<TOrder[]>([]);
-  const [loading, setLoading] = useState(false);
-
-  const fetchData = async () => {
-    setLoading(true); // Start loading
-
-    try {
-      if (user?.user?.userId) {
-        const orderData = await getCustomerOrders(user.user.userId);
-        console.log("API Response Data:", orderData);
-
-        if (orderData) {
-          setOrders(orderData?.data || []);
-          console.log("Updated Orders State:", orderData.data);
-        } else {
-          console.warn("No data found in response.");
-          setOrders([]);
-        }
-      }
-    } catch (error) {
-      console.error("Error fetching medicines:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-  useEffect(() => {
-    if (user?.user?.userId) {
-      fetchData();
-    }
-  }, [user?.user?.userId]);
-
-  // console.log(user?.user?.userId);
+const OrderManagementTable = ({ orders }: { orders: TOrder[] }) => {
   return (
     <div>
       <Table>
@@ -57,15 +21,17 @@ const CustomerOrders = () => {
             <TableHead>Image</TableHead>
             <TableHead>Name</TableHead>
             <TableHead>Quantity</TableHead>
+            <TableHead>Prescription</TableHead>
             <TableHead>Delivery Charge</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Shipping Address</TableHead>
             <TableHead>Total Amount</TableHead>
+            <TableHead>Action</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {orders.length > 0 ? (
-            orders?.map((order: TOrder, index: number) => (
+            orders?.map((order, index: number) => (
               <TableRow key={index}>
                 <TableCell>
                   {order.products.map((product) => (
@@ -95,11 +61,25 @@ const CustomerOrders = () => {
                     </div>
                   ))}
                 </TableCell>
+                <TableCell>
+                  {order.products.map((product) => (
+                    <div key={product?.product}>
+                      <p>Prescription link: {product?.prescriptionLink}</p>
+                    </div>
+                  ))}
+                </TableCell>
 
-                <TableCell>{order.deliveryCharge}</TableCell>
+                <TableCell>{order?.deliveryCharge}</TableCell>
                 <TableCell>{order.status}</TableCell>
                 <TableCell>{order.shippingAddress}</TableCell>
                 <TableCell>{order.totalAmount}</TableCell>
+                <TableCell>
+                  <Link href={`/admin/orders/${order._id}`}>
+                    <Button>
+                      <FaRegEdit />
+                    </Button>
+                  </Link>
+                </TableCell>
               </TableRow>
             ))
           ) : (
@@ -115,4 +95,4 @@ const CustomerOrders = () => {
   );
 };
 
-export default CustomerOrders;
+export default OrderManagementTable;

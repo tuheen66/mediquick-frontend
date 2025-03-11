@@ -31,7 +31,7 @@ const Banner = () => {
             alt="hero1"
             width={1200}
             height={600}
-            className="w-full relative"
+            className="w-full relative rounded-lg"
           />
 
           <div className="absolute rounded-xl top-0 right-0 text-gray-900 bg-black opacity-40 w-full h-full "></div>
@@ -49,7 +49,7 @@ const Banner = () => {
             alt="hero2"
             width={1200}
             height={600}
-            className="w-full"
+            className="w-full rounded-lg"
           />
           <div className="absolute rounded-xl top-0 right-0 text-gray-900 bg-black opacity-40 w-full h-full "></div>
           <div className="absolute top-[75%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
@@ -66,7 +66,7 @@ const Banner = () => {
             alt="hero3"
             width={1200}
             height={600}
-            className="w-full"
+            className="w-full rounded-lg"
           />
           <div className="absolute rounded-xl top-0 right-0 text-gray-900 bg-black opacity-40 w-full h-full "></div>
           <div className="absolute top-[75%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">

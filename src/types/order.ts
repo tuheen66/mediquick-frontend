@@ -1,12 +1,15 @@
 export type Product = {
   _id: string;
-  product: string; // Product ID
+  product: string;
+  name:string;
+  image:string;
   quantity: number;
   prescriptionLink: string;
   unitPrice: number;
 };
 
 export type TOrder = {
+  _id?:string;
   products: Product[];
   deliveryCharge: number;
   status: "Pending" | "Shipped" | "Delivered" | "Cancelled";
