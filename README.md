@@ -1,6 +1,6 @@
 # Project name: Mediquick
 ## An online medicine shop
-## Live server link: https://mediquick-client.vercel.app/admin
+## Live server link: https://mediquick-client.vercel.app
 
 ## Admin login credentials : "email": "admin@mediquick.com",     "password": "admin123",
 
