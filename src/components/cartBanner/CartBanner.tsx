@@ -21,7 +21,7 @@ const CartBanner = () => {
           <h1 className=" text-3xl text-gray-800 font-bold">Your cart</h1>
 
           <Link href={"/shop"}>
-            <Button className="bg-orange-500 hover:bg-orange-800 text-white w-">
+            <Button className="bg-orange-500 hover:bg-orange-800 text-white cursor-pointer">
               Buy more
             </Button>
           </Link>

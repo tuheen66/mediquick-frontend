@@ -51,7 +51,7 @@ const Reviews = () => {
         >
           {reviews.map((review: TReview, index: number) => (
             <SwiperSlide key={index}>
-              <div className="p-4 bg-slate-200 rounded-xl  ">
+              <div className="p-4 bg-gray-200 rounded-xl  ">
                 <h3 className="font-semibold">{review.name}</h3>
                 <p className="text-gray-700 mt-2">{review.review}</p>
               </div>

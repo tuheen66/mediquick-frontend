@@ -37,7 +37,7 @@ const Payments = () => {
       </div>
       
       <Link href={"/checkout"}>
-        <Button className="w-full text-xl  py-5 bg-orange-500 hover:bg-orange-800 text-white">
+        <Button className="w-full text-xl  py-5 bg-orange-500 cursor-pointer hover:bg-orange-800 text-white">
           Proceed to checkout
         </Button>
       </Link>

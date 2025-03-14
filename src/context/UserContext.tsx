@@ -16,6 +16,7 @@ interface IUserProviderValues {
   isLoading: boolean;
   setUser: (user: IUser | null) => void;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
+  
 }
 
 const UserContext = createContext<IUserProviderValues | undefined>(undefined);

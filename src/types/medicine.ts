@@ -12,3 +12,8 @@ export type IMedicine = {
   expiryDate: string;
   inStock: boolean;
 };
+
+export interface MedicinesResponse {
+  medicines: IMedicine[];
+  hasMore: boolean;
+}

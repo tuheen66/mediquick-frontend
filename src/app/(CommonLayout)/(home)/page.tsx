@@ -3,7 +3,7 @@ import Brands from "@/components/modules/home/Brands";
 import FeaturedMedicine from "@/components/modules/home/FeaturedMedicine/FeaturedMedicine";
 import Overview from "@/components/modules/home/Overview/Overview";
 import Reviews from "@/components/modules/home/Reviews/Reviews";
-import Footer from "@/components/shared/Footer";
+
 
 const HomePage = () => {
   return (
@@ -22,7 +22,6 @@ const HomePage = () => {
         </h2>
         <Brands />
       </div>
-     
     </div>
   );
 };

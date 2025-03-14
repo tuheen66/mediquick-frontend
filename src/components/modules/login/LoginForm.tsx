@@ -17,11 +17,15 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
+
 const LoginForm = () => {
   const form = useForm();
   const router = useRouter();
   const { setIsLoading } = useUser();
   const searchParams = useSearchParams();
+  const user = useUser()
+  console.log(user)
+
 
   const redirect = searchParams.get("redirectPath");
 
@@ -94,7 +98,7 @@ const LoginForm = () => {
           />
 
           <Button
-            className="mt-5 w-full bg-orange-500 hover:bg-orange-800 text-white"
+            className="mt-5 w-full bg-orange-500 hover:bg-orange-800 text-white cursor-pointer"
             type="submit"
           >
             {isSubmitting ? "Logging ..." : "Login"}

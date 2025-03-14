@@ -60,7 +60,7 @@ const CartProductCard = ({ medicine }: { medicine: CartProduct }) => {
           <Button
             onClick={() => handleDecrementQuantity(medicine._id)}
             variant="outline"
-            className="size-8 rounded-sm"
+            className="size-8 rounded-sm cursor-pointer"
           >
             <Minus />
           </Button>
@@ -68,16 +68,16 @@ const CartProductCard = ({ medicine }: { medicine: CartProduct }) => {
           <Button
             onClick={() => handleIncrementQuantity(medicine._id)}
             variant="outline"
-            className="size-8 rounded-sm"
+            className="size-8 rounded-sm cursor-pointer"
           >
             <Plus />
           </Button>
           <Button
             onClick={() => handleRemoveProduct(medicine._id)}
             variant="outline"
-            className="size-8 rounded-sm"
+            className="size-8 rounded-sm cursor-pointer"
           >
-            <Trash className="text-red-500/50" />
+            <Trash className="text-red-500 " />
           </Button>
         </div>
       </div>

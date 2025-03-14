@@ -98,14 +98,14 @@ const Navbar = () => {
               <p>{user?.email}</p>
               <Button
                 onClick={handleLogout}
-                className="bg-orange-500 hover:bg-orange-800 text-white"
+                className="bg-orange-500 hover:bg-orange-800 text-white cursor-pointer"
               >
                 Logout
               </Button>
             </>
           ) : (
             <Link href="/login">
-              <Button className="bg-orange-500  text-white  hover:bg-orange-800 ">
+              <Button className="bg-orange-500  text-white  hover:bg-orange-800 cursor-pointer ">
                 Login
               </Button>
             </Link>

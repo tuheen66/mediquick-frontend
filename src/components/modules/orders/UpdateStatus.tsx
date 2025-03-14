@@ -88,7 +88,7 @@ const UpdateStatus = ({ order }: { order: TOrder }) => {
               className="bg-orange-600 text-white hover:bg-orange-800"
               type="submit"
             >
-              {isSubmitting ? "Updating Medicine....." : "Update Medicine"}
+              {isSubmitting ? "Updating Order Status....." : "Update Order Status"}
             </Button>
           </form>
         </Form>

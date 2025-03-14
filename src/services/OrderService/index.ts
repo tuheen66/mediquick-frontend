@@ -148,3 +148,24 @@ export const getSingleCustomerOrders = async (user: string) => {
     return { success: false, message: error.message };
   }
 };
+
+export const getRevenue = async () => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_API}/order/revenue/total-revenue`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: (await cookies()).get("accessToken")!.value || "",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      }
+    );
+    const data = await res.json();
+
+    return data;
+  } catch (error: any) {
+    return { success: false, message: error.message };
+  }
+};

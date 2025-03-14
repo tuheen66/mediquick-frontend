@@ -1,7 +1,9 @@
+import AdminHome from "@/components/modules/adminHome/AdminHome";
+
 const AdminHomePage = () => {
   return (
     <div>
-      <h1>Admin Home</h1>
+      <AdminHome />
     </div>
   );
 };

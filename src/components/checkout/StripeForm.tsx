@@ -125,7 +125,7 @@ const StripeForm = () => {
             }}
           />
           <button
-            className="bg-orange-600 py-1 rounded-lg w-20 border-none text-white text-lg mt-6 hover:bg-orange-800 "
+            className="bg-orange-600 py-1 rounded-lg w-20 border-none text-white text-lg mt-6 hover:bg-orange-800 cursor-pointer"
             type="submit"
             disabled={!stripe || !clientSecret}
           >

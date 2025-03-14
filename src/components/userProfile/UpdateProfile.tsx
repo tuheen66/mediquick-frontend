@@ -132,7 +132,7 @@ const UpdateProfile = ({ user }: { user: any }) => {
             />
 
             <Button
-              className="mt-5 w-full bg-orange-500 text-white hover:bg-orange-700"
+              className="mt-5 w-full bg-orange-500 text-white hover:bg-orange-700 cursor-pointer"
               type="submit"
             >
               {isSubmitting ? "Submitting ..." : "Submit"}

@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { deleteMedicine, getAllMedicine } from "@/services/MedicineService";
+import { deleteMedicine, featuredMedicine} from "@/services/MedicineService";
 import { IMedicine } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +26,7 @@ const ManageMedicine = () => {
       setLoading(true); // Start loading
 
       try {
-        const medicineData = await getAllMedicine();
+        const medicineData = await featuredMedicine();
         setMedicines(medicineData?.data || []);
       } catch (error) {
         console.error("Error fetching medicines:", error);

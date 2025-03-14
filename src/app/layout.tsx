@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import Providers from "@/providers/Providers";
+// import ReactQueryProvider from "@/providers/ReactQueryProvider";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -39,8 +40,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${roboto.className} ${roboto.className} antialiased`}>
         <Providers>
-          <Toaster richColors position="top-center" />
-          {children}
+          {/* <ReactQueryProvider> */}
+            <Toaster richColors position="top-center" />
+            {children}
+          {/* </ReactQueryProvider> */}
         </Providers>
       </body>
     </html>

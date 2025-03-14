@@ -7,7 +7,7 @@ import Link from "next/link";
 const MedicineCard = ({ medicine }: { medicine: IMedicine }) => {
   return (
     <div className="bg-slate-200 rounded-xl p-4 shadow-xl shadow-slate-500 flex flex-col flex-grow items-stretch justify-between">
-      <div className="flex justify-center">
+      <div className="flex justify-center relative">
         <Image
           className="rounded-xl"
           src={medicine.image}
@@ -15,6 +15,8 @@ const MedicineCard = ({ medicine }: { medicine: IMedicine }) => {
           width={250}
           height={250}
         />
+        <div className="absolute top-5 right-12
+         bg-orange-500 text-white rounded-md p-1">TK {medicine.price}</div>
       </div>
       <div className="mt-4 text-gray-800 space-y-2">
         <h2 className="text-xl font-semibold  ">{medicine.name}</h2>
@@ -24,6 +26,12 @@ const MedicineCard = ({ medicine }: { medicine: IMedicine }) => {
         <p>
           <span className="font-semibold">Manufacturer :</span>{" "}
           {medicine.manufacturerName}
+        </p>
+        <p>
+          <span className="font-semibold">Prescription required : </span><span className="uppercase">
+
+          {medicine.prescriptionRequired}
+          </span>
         </p>
         <p>
           <span className="font-semibold">Description :</span>{" "}
