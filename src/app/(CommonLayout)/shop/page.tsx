@@ -1,6 +1,6 @@
 // import MedicineCard from "@/components/medicineCard/MedicineCard";
 // import Shop from "@/components/modules/shop/Shop";
-import Shop1 from "@/components/modules/shop/Shope1";
+import Shop1 from "@/components/modules/shop/Shop";
 
 // import { getAllMedicine } from "@/services/MedicineService";
 
@@ -20,7 +20,7 @@ const ShopPage = () => {
         ))}
       </div> */}
 
-      <Shop1/>
+      <Shop/>
     </div>
   );
 };
