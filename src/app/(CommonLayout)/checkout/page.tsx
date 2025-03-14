@@ -8,14 +8,14 @@ const CheckoutPage = () => {
       <h1 className="text-3xl text-gray-800 font-bold text-center my-8">
         Checkout Page
       </h1>
-      <div className="flex justify-center items-center gap-20 mb-12">
-        <div className=" w-80 ">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-20 mb-12">
+        <div className=" lg:w-80 ">
           <Address />
 
           <OrderConfirm />
           <div></div>
         </div>
-        <div className="  w-[50%]">
+        <div className="w-full lg:w-[50%]">
           <Checkout />
         </div>
       </div>

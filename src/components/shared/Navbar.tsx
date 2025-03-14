@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <div className=" bg-gray-200  text-slate-700 py-2 shadow-xl w-[90%] mx-auto px-4 rounded-lg">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col lg:flex-row justify-between items-center">
         <div>
           <Link href="/" className="flex gap-2 items-center text-2xl font-bold">
             <Image
@@ -41,7 +41,7 @@ const Navbar = () => {
             </h2>
           </Link>
         </div>
-        <nav className=" flex  lg:flex-row flex-wrap justify-between items-center  gap-12">
+        <nav className=" flex flex-col  lg:flex-row flex-wrap justify-between items-center  gap-4 lg:gap-12">
           <Link
             href="/shop"
             className={

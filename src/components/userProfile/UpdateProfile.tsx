@@ -54,7 +54,7 @@ const UpdateProfile = ({ user }: { user: any }) => {
   };
 
   return (
-    <div className="w-1/2 my-12 mx-auto">
+    <div className="lg:w-1/2 my-12 mx-auto flex justify-center items-center">
       <div className="max-w-md w-full p-5 border-2 border-gray-300 rounded-xl bg-gray-200  flex-grow">
         <div>
           <h1 className="text-2xl font-semibold text-center">Update profile</h1>

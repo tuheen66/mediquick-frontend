@@ -70,7 +70,7 @@ const CustomerOrders = () => {
                 <TableCell>
                   {order.products.map((product) => (
                     <div key={product?.product}>
-                      <p>
+                      <p className="my-2">
                         <Image
                           src={product?.image}
                           alt="Image"
@@ -84,14 +84,14 @@ const CustomerOrders = () => {
                 <TableCell>
                   {order.products.map((product) => (
                     <div key={product?.product}>
-                      <p> {product?.name}</p>
+                      <p className="my-12"> {product?.name}</p>
                     </div>
                   ))}
                 </TableCell>
                 <TableCell>
                   {order.products.map((product) => (
                     <div key={product?.product}>
-                      <p>Quantity: {product?.quantity}</p>
+                      <p className="my-12">Quantity: {product?.quantity}</p>
                     </div>
                   ))}
                 </TableCell>

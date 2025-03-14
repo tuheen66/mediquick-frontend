@@ -6,7 +6,7 @@ import Link from "next/link";
 const CartBanner = () => {
   return (
     <div className="hero  rounded-xl ">
-      <div className="h-[600px] mx-auto">
+      <div className="lg:h-[600px] mx-auto">
         <Image
           src={banner}
           alt="image"
@@ -16,7 +16,7 @@ const CartBanner = () => {
         />
       </div>
       <div className="hero-overlay  rounded-xl "></div>
-      <div className="  text-neutral-content">
+      {/* <div className="  text-neutral-content">
         <div className=" my-4 flex justify-between items-center w-1/2 ">
           <h1 className=" text-3xl text-gray-800 font-bold">Your cart</h1>
 
@@ -26,7 +26,7 @@ const CartBanner = () => {
             </Button>
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

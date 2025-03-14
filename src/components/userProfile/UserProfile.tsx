@@ -41,17 +41,17 @@ const UserProfile = () => {
 
   return (
     <div className="">
-      <div className="flex flex-col justify-center items-center my-20 space-y-4 border-2 border-orange-500 shadow-xl shadow-slate-600 p-4 w-1/2 mx-auto rounded-xl ">
-        <h2 className="text-3xl text-gray-800">
+      <div className="flex flex-col justify-center items-center my-20 space-y-4 border-2 border-orange-500 shadow-xl shadow-slate-600 p-4 lg:w-1/2 mx-auto rounded-xl ">
+        <h2 className="text-xl lg:text-3xl text-gray-800">
           Welcome back <span className="font-bold">{currentUser?.name}</span>
         </h2>
-        <p className="text-3xl text-gray-800">
+        <p className="text-xl lg:text-3xl text-gray-800">
           Address: <span className="font-bold">{currentUser?.address}</span>
         </p>
-        <p className="text-3xl text-gray-800">
+        <p className="text-xl lg:text-3xl text-gray-800">
           Phone: <span className="font-bold">{currentUser?.phone}</span>
         </p>
-        <p className="text-3xl text-gray-800">
+        <p className="text-xl lg:text-3xl text-gray-800">
           Email: <span className="font-bold">{currentUser?.email}</span>
         </p>
       </div>

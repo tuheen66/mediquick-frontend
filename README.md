@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project name: Mediquick
+## An online medicine shop
+## Live server link: 
 
-## Getting Started
+## Admin login credentials : "email": "admin@mediquick.com",     "password": "admin123",
 
-First, run the development server:
+## Technology used:
+* Node.js
+* Express.js
+* Mongoose
+* NextJs
+* Redux
+* TypeScript
+* tailwindcss
+* shadcn/ui
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+In addition to those I installed -
+* eslint - to check and fix code errors.
+* prettier - to format code to have better look.
+* ts-node-dev - to run the server every time the code is updated
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## The project has a database named blog-project and has two collections - blogs and users.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How it works:
 
-## Deploy on Vercel
+The project has frontend and backend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Any one can visit the website and go through the bicycle listings and check detail page.
+2. If any user wants to buy a product he/she needs to login first if registered already. if not registered then he/she needs to register first and then login to buy. 
+3. Once the order is placed he/she will be diverted to payment page where he/she can pay by card through stripe.
+4. After login customer will be diverted to dashboard and he/she can see her profile. he/she can change his/her password by clicking change password button
+5. Customer can see his/her order details in dashboard.
+6. Admin will see his dashboard after login and he will see the summery of the business as total order, total revenue and best selling product.
+7. Admin can see all the users, can block any user's account.
+8. Admin can see all the orders placed. can delete any order.
+9. Admin can create product and update price and quantity and delete any order.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+

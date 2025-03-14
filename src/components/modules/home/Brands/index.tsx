@@ -36,7 +36,7 @@ const Brands = () => {
             alt="brand1"
             width={300}
             height={300}
-            className="w-36"
+            className="lg:w-36"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -45,7 +45,7 @@ const Brands = () => {
             alt="brand1"
             width={300}
             height={300}
-            className="w-36"
+            className="lg:w-36"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -54,7 +54,7 @@ const Brands = () => {
             alt="brand1"
             width={100}
             height={100}
-            className="mt-6"
+            className="lg:mt-6"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -63,7 +63,7 @@ const Brands = () => {
             alt="brand1"
             width={300}
             height={300}
-            className="w-36"
+            className="lg:w-36"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -72,7 +72,7 @@ const Brands = () => {
             alt="brand1"
             width={300}
             height={300}
-            className="w-36"
+            className="lg:w-36"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -81,7 +81,7 @@ const Brands = () => {
             alt="brand1"
             width={300}
             height={300}
-            className="w-36"
+            className="lg:w-36"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -90,7 +90,7 @@ const Brands = () => {
             alt="brand1"
             width={300}
             height={300}
-            className="w-36"
+            className="lg:w-36"
           />
         </SwiperSlide>
         <SwiperSlide>

@@ -46,14 +46,14 @@ const AdminHome = () => {
   console.log(medicines?.length);
 
   return (
-    <div className="grid grid-cols-3 gap-4 w-[90%] mx-auto">
-      <div className="flex flex-col justify-center items-center border-1 border-orange-600 rounded-xl p-4 w-64 h-40 space-y-8">
+    <div className="grid lg:grid-cols-3 gap-4 w-[90%] mx-auto">
+      <div className="flex flex-col justify-center items-center border-1 border-orange-600 rounded-xl p-4 w-64 h-40 space-y-8 mx-auto">
         <p className="text-5xl font-bold text-orange-500">{orders?.length}</p>
         <h2 className="text-2xl font-semibold text-gray-700">
           Number of Orders{" "}
         </h2>
       </div>
-      <div className="flex flex-col justify-center items-center border-1 border-orange-600 rounded-xl p-4 w-64 h-40 space-y-8">
+      <div className="flex flex-col justify-center items-center border-1 border-orange-600 rounded-xl p-4 w-64 h-40 space-y-8 mx-auto">
         <div className="flex">
           <p className="text-5xl font-bold text-gray-700 ">
             Tk <span className="text-5xl font-bold text-orange-500">{revenue}</span>

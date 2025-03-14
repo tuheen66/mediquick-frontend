@@ -48,7 +48,7 @@ const UpdateStatus = ({ order }: { order: TOrder }) => {
   };
 
   return (
-    <div className="w-1/3 bg-slate-300 p-8 rounded-lg">
+    <div className="lg:w-1/3 bg-slate-300 p-8 rounded-lg">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">
         Update order status
       </h1>
@@ -57,7 +57,7 @@ const UpdateStatus = ({ order }: { order: TOrder }) => {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="w-2/3 space-y-6"
+            className="md:w-2/3 space-y-6"
           >
             <FormField
               control={form.control}

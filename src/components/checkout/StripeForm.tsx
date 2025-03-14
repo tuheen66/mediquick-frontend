@@ -96,7 +96,7 @@ const StripeForm = () => {
   };
 
   return (
-    <div className="flex-1">
+    <div className="lg:flex-1">
       <h1 className="mb-4 text-2xl text-center font-semibold text-gray-700">
         Pay Here
       </h1>

@@ -16,7 +16,7 @@ const HomePage = () => {
         <FeaturedMedicine />
         <Reviews />
       </div>
-      <div className="h-48">
+      <div className="lg:h-48">
         <h2 className="text-center text-3xl text-gray-800 mt-8 font-bold">
           Top Brands
         </h2>

@@ -93,7 +93,7 @@ const Shop1 = () => {
   return (
     <div className="container mx-auto p-4 ">
       {/* Filters Section */}
-      <div className="mb-4 flex gap-4 flex-wrap justify-between py-4 px-2 bg-gray-200 rounded-xl">
+      <div className="mb-4 flex  gap-4 flex-wrap justify-between  py-4 px-2 bg-gray-200 rounded-xl">
         {/* Category Filter */}
         <div>
           <label className="mr-2 font-semibold text-gray-700">Category:</label>
@@ -176,7 +176,7 @@ const Shop1 = () => {
       </div>
 
       {/* Medicine Grid */}
-      <div className="grid grid-cols-3 gap-12 mt-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mt-4">
         {filteredMedicines.map((medicine) => (
           <MedicineCard key={medicine._id} medicine={medicine} />
         ))}

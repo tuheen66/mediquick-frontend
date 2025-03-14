@@ -19,7 +19,7 @@ const MedicineDetailsCard = ({ medicine }: { medicine: IMedicine }) => {
   return (
     <div className="my-12">
       <h1 className="text-3xl font-bold text-center mb-4">{medicine.name}</h1>
-      <div className="flex items-center justify-center gap-8 w-[70%] mx-auto  p-4 mb-8">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:w-[70%] mx-auto  p-4 mb-8">
         <div className="shadow-lg shadow-slate-400">
           <Image src={medicine.image} width={400} height={400} alt="image" />
         </div>

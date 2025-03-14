@@ -29,6 +29,10 @@ const data = {
       isActive: true,
       items: [
         {
+          title: "Admin Home",
+          url: "/admin",
+        },
+        {
           title: "Manage Medicines",
           url: "/admin/medicines",
         },
