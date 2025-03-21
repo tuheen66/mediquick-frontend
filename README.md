@@ -30,15 +30,16 @@ In addition to those I installed -
 
 The project has frontend and backend
 
-1. Any one can visit the website and go through the bicycle listings and check detail page.
-2. If any user wants to buy a product he/she needs to login first if registered already. if not registered then he/she needs to register first and then login to buy. 
-3. Once the order is placed he/she will be diverted to payment page where he/she can pay by card through stripe.
-4. After login customer will be diverted to dashboard and he/she can see her profile. he/she can change his/her password by clicking change password button
-5. Customer can see his/her order details in dashboard.
-6. Admin will see his dashboard after login and he will see the summery of the business as total order, total revenue and best selling product.
-7. Admin can see all the users, can block any user's account.
-8. Admin can see all the orders placed. can delete any order.
-9. Admin can create product and update price and quantity and delete any order.
+1. Any one can visit the website and go through the medicine listings and check detail page.
+2. If any user wants to buy a medicine he/she needs to login first if registered already. if not registered then he/she needs to register first and then login to buy. 
+3. Once the order is placed he/she will be diverted to cart page and then with all the medicines cost he/she can proceed to checkout page where he/she can pay by card through stripe.
+4. Before payment, user must input the city, address and prescription link if required.
+5. After login customer will be diverted to profile page where he/she can see her profile. he/she can update his/her profile by update profile button
+6. Customer can see his/her order details in order page.
+7. Admin will see his dashboard link in navbar after login (not visible with customer login) and he will see the summery of the business as total order, total revenue and medicine stock details.
+8. Admin can see all the users, can see their order history.
+9. Admin can see all the orders placed. can update order status.
+10. Admin can create medicine data and update medicine data and delete any order.
 
 
 

@@ -4,10 +4,10 @@ import { getCurrentUser } from "./services/AuthService";
 type TRole = keyof typeof roleBasedPrivateRoutes;
 
 const authRoutes = ["/login", "/register"];
-const roleBasedPrivateRoutes={
-    customer:[/^\/profile/, /^\/orders/, /^\/cart/,/^\/checkout/],
-    admin:[/^\/admin/]
-}
+const roleBasedPrivateRoutes = {
+  customer: [/^\/profile/, /^\/orders/, /^\/cart/, /^\/checkout/],
+  admin: [/^\/admin/],
+};
 
 export const middleware = async (request: NextRequest) => {
   const { pathname } = request.nextUrl;
@@ -18,7 +18,7 @@ export const middleware = async (request: NextRequest) => {
     } else {
       return NextResponse.redirect(
         new URL(
-          `http://localhost:3000/login?redirectPath=${pathname}`,
+          `https://mediquick-client.vercel.app/login?redirectPath=${pathname}`,
           request.url
         )
       );
@@ -28,12 +28,20 @@ export const middleware = async (request: NextRequest) => {
     const routes = roleBasedPrivateRoutes[userInfo?.role as TRole];
 
     if (routes.some((route) => pathname.match(route))) {
-        return NextResponse.next();
-      }
+      return NextResponse.next();
     }
-    return NextResponse.redirect(new URL("/", request.url));
+  }
+  return NextResponse.redirect(new URL("/", request.url));
 };
 
 export const config = {
-  matcher: ["/login", "/admin", "/admin/:page", "/profile", "/orders", "/cart", "/checkout"],
+  matcher: [
+    "/login",
+    "/admin",
+    "/admin/:page",
+    "/profile",
+    "/orders",
+    "/cart",
+    "/checkout",
+  ],
 };

@@ -61,10 +61,6 @@ export const getAllMedicines = async () => {
   }
 };
 
-
-
-
-
 export const getSingleMedicine = async (productId: string) => {
   try {
     const res = await fetch(

@@ -104,7 +104,7 @@ const OrderConfirm = () => {
         onClick={handleOrder}
         className="w-full text-xl  py-5 bg-orange-600 hover:bg-orange-800 text-white cursor-pointer"
       >
-        Confirm your Order Now
+        Proceed to payment
       </Button>
     </div>
   );

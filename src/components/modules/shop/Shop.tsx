@@ -63,7 +63,9 @@ const Shop = () => {
     // Filter by prescription requirement
     if (selectedPrescription !== "All") {
       filtered = filtered.filter(
-        (med) => med.prescriptionRequired.toLowerCase() === selectedPrescription.toLowerCase()
+        (med) =>
+          med.prescriptionRequired.toLowerCase() ===
+          selectedPrescription.toLowerCase()
       );
     }
 
@@ -83,15 +85,24 @@ const Shop = () => {
     }
 
     setFilteredMedicines(filtered);
-  }, [selectedCategory, selectedPrescription, minPrice, maxPrice, sortBy, medicines]);
+  }, [
+    selectedCategory,
+    selectedPrescription,
+    minPrice,
+    maxPrice,
+    sortBy,
+    medicines,
+  ]);
 
   // Update the URL with selected filters (excluding price and sorting)
   const handleFilterChange = (category: string, prescription: string) => {
-    router.push(`?category=${category}&prescription=${prescription}`, { scroll: false });
+    router.push(`?category=${category}&prescription=${prescription}`, {
+      scroll: false,
+    });
   };
 
   return (
-    <div className="container mx-auto p-4 ">
+    <div className="">
       {/* Filters Section */}
       <div className="mb-4 flex  gap-4 flex-wrap justify-between  py-4 px-2 bg-gray-200 rounded-xl">
         {/* Category Filter */}
@@ -100,7 +111,9 @@ const Shop = () => {
           <select
             className="p-2 border rounded-md"
             value={selectedCategory}
-            onChange={(e) => handleFilterChange(e.target.value, selectedPrescription)}
+            onChange={(e) =>
+              handleFilterChange(e.target.value, selectedPrescription)
+            }
           >
             {categories.map((category) => (
               <option key={category} value={category}>
@@ -112,11 +125,15 @@ const Shop = () => {
 
         {/* Prescription Required Filter */}
         <div>
-          <label className="mr-2 font-semibold text-gray-700">Prescription Required:</label>
+          <label className="mr-2 font-semibold text-gray-700">
+            Prescription Required:
+          </label>
           <select
             className="p-2 border rounded-md"
             value={selectedPrescription}
-            onChange={(e) => handleFilterChange(selectedCategory, e.target.value)}
+            onChange={(e) =>
+              handleFilterChange(selectedCategory, e.target.value)
+            }
           >
             {prescriptionOptions.map((option) => (
               <option key={option} value={option}>
@@ -128,7 +145,9 @@ const Shop = () => {
 
         {/* Price Range Filter */}
         <div>
-          <label className="mr-2 font-semibold text-gray-700">Price Range:</label>
+          <label className="mr-2 font-semibold text-gray-700">
+            Price Range:
+          </label>
           <input
             type="number"
             placeholder="Min"
@@ -147,7 +166,9 @@ const Shop = () => {
 
         {/* Price Sorting Filter */}
         <div>
-          <label className="mr-2 font-semibold text-gray-700">Sort by Price:</label>
+          <label className="mr-2 font-semibold text-gray-700">
+            Sort by Price:
+          </label>
           <select
             className="p-2 border rounded-md"
             value={sortBy}

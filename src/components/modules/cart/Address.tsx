@@ -86,7 +86,7 @@ const Address = () => {
             <Input
               onChange={handlePrescriptionLink}
               type="text"
-              placeholder="upload prescription link"
+              placeholder="write your prescription link here"
             />
           </div>
           }
