@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Overview = () => {
   return (
-    <section className="bg-gray-200 dark:bg-gray-900 py-12 px-6 mt-6 rounded-xl">
+    <section className=" dark:bg-gray-900 py-10 px-6 mt-6 ">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
           Welcome to Our Online Medicine Store
@@ -16,12 +16,14 @@ const Overview = () => {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <Link href="/shop">
-            <Button className=" bg-orange-600 text-white hover:bg-orange-800 cursor-pointer">
+            <Button className=" bg-orange-600 text-white rounded-none hover:bg-orange-800 cursor-pointer">
               Shop Now
             </Button>
           </Link>
         </div>
       </div>
+
+      <hr className="border-1 border-b border-gray-200 mt-12 w-[90%] mx-auto" />
     </section>
   );
 };

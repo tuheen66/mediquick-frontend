@@ -7,8 +7,8 @@ import Reviews from "@/components/modules/home/Reviews/Reviews";
 
 const HomePage = () => {
   return (
-    <div>
-      <div>
+    <div >
+      <div >
         <Banner />
       </div>
       <div>

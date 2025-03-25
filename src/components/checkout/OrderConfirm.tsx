@@ -15,7 +15,7 @@ import {
 import { setTotalPrice } from "@/redux/features/checkoutSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { createOrder } from "@/services/OrderService";
-
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 import { toast } from "sonner";
 
@@ -100,12 +100,15 @@ const OrderConfirm = () => {
         <p className="text-gray-800 ">Grand Total</p>
         <p className="font-semibold">BDT {grandTotal}</p>
       </div>
-      <Button
-        onClick={handleOrder}
-        className="w-full text-xl  py-5 bg-orange-600 hover:bg-orange-800 text-white cursor-pointer"
-      >
-        Proceed to payment
-      </Button>
+      <div className="flex gap-4 justify-center items-center">
+        <Button
+          onClick={handleOrder}
+          className="w-full rounded-none  py-5 bg-orange-600 hover:bg-orange-800 text-white cursor-pointer"
+        >
+          Proceed to payment
+          <FaLongArrowAltRight />
+        </Button>
+      </div>
     </div>
   );
 };

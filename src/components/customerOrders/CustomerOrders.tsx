@@ -51,9 +51,9 @@ const CustomerOrders = () => {
   // console.log(user?.user?.userId);
   return (
     <div>
-      <Table>
-        <TableHeader className="font-bold">
-          <TableRow>
+      <Table >
+        <TableHeader >
+          <TableRow >
             <TableHead>Image</TableHead>
             <TableHead>Name</TableHead>
             <TableHead>Quantity</TableHead>
@@ -66,7 +66,7 @@ const CustomerOrders = () => {
         <TableBody>
           {orders.length > 0 ? (
             orders?.map((order: TOrder, index: number) => (
-              <TableRow key={index}>
+              <TableRow key={index} >
                 <TableCell>
                   {order.products.map((product) => (
                     <div key={product?.product}>

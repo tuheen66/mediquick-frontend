@@ -32,25 +32,25 @@ const FeaturedMedicine = () => {
   });
 
   // Limit to 6 results for display
-  const medicinesToDisplay = filteredMedicines.slice(0, 6);
+  const medicinesToDisplay = filteredMedicines.slice(0, 8);
 
   return (
-    <div>
+    <div className="">
       <h2 className="text-3xl text-gray-800 font-bold text-center my-8">Featured Medicines</h2>
 
       {/* Search Bar */}
-      <div className="mb-6 text-center bg-gray-200 p-4 rounded-xl ">
+      <div className="mb-6 text-center p-4  ">
         <input
           type="text"
           placeholder="Search medicines by name or category"
           value={searchQuery}
           onChange={handleSearchChange}
-          className="p-2 border bg-white border-slate-600 rounded-md w-full md:w-1/2 lg:w-1/3"
+          className="p-2 border bg-white border-gray-300 w-full md:w-1/2 lg:w-1/3"
         />
       </div>
 
       {/* Medicine Cards */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 w-[90%] mx-auto">
         {medicinesToDisplay.map((medicine: IMedicine) => (
           <MedicineCard key={medicine._id} medicine={medicine} />
         ))}

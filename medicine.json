@@ -142,5 +142,54 @@
     "manufacturerName": "Centrum",
     "manufacturerDetails": "Centrum is a leading brand in the dietary supplement industry, known for its high-quality multivitamins. Founded in 1978, Centrum is committed to supporting health and wellness through science-based nutrition.",
     "expiryDate": "2026-04-30"
+  },
+  {
+    "name": "Doxycycline 100mg",
+    "description": "Doxycycline 100mg is a broad-spectrum antibiotic used to treat bacterial infections such as respiratory infections, urinary tract infections, and acne. It belongs to the tetracycline class and works by inhibiting bacterial protein synthesis. It is commonly used for treating Lyme disease, malaria prevention, and sexually transmitted infections. Always take as prescribed and avoid prolonged sun exposure while using this medication.",
+    "image": "https://i.ibb.co.com/h1Czct7v/doxycycline.png",
+    "price": 11.99,
+    "quantity": 50,
+    "category": "Antibiotics",
+    "prescriptionRequired": "yes",
+    "manufacturerName": "Eli Lilly and Company",
+    "manufacturerDetails": "Eli Lilly and Company is a global pharmaceutical company focused on innovation in medicine. Founded in 1876, it is dedicated to improving lives through groundbreaking therapies.",
+    "expiryDate": "2025-09-10"
+  },
+  {
+    "name": "Losartan 50mg",
+    "description": "Losartan 50mg is an angiotensin receptor blocker (ARB) used to treat high blood pressure and reduce the risk of stroke in patients with hypertension. It works by relaxing blood vessels to improve blood flow. Losartan is also used to protect the kidneys in diabetic patients. It is well-tolerated, but patients should monitor blood pressure regularly and follow their doctor's instructions.",
+    "image": "https://i.ibb.co.com/PZJKJ8vz/losartan.png",
+    "price": 13.49,
+    "quantity": 40,
+    "category": "Cardiovascular",
+    "prescriptionRequired": "yes",
+    "manufacturerName": "Merck & Co., Inc.",
+    "manufacturerDetails": "Merck & Co., Inc. is a global leader in pharmaceuticals, dedicated to discovering innovative treatments. Founded in 1891, Merck continues to improve global healthcare.",
+    "expiryDate": "2026-03-15"
+  },
+  {
+    "name": "Levothyroxine 50mcg",
+    "description": "Levothyroxine 50mcg is a synthetic thyroid hormone used to treat hypothyroidism. It helps restore normal hormone levels and improve symptoms such as fatigue, weight gain, and depression. Levothyroxine should be taken on an empty stomach in the morning for best absorption. Regular thyroid function tests are recommended for dosage adjustments.",
+    "image": "https://i.ibb.co.com/tFdjRGf/levothyroxine.png",
+    "price": 10.99,
+    "quantity": 55,
+    "category": "Endocrine",
+    "prescriptionRequired": "yes",
+    "manufacturerName": "AbbVie Inc.",
+    "manufacturerDetails": "AbbVie Inc. is a research-driven pharmaceutical company focused on innovative treatments for complex conditions. Founded in 2013, AbbVie is committed to advancing healthcare solutions.",
+    "expiryDate": "2025-12-05"
+  },
+  {
+    "name": "Fexofenadine 180mg",
+    "description": "Fexofenadine 180mg is a non-drowsy antihistamine used to relieve allergy symptoms such as hay fever, hives, and runny nose. It works by blocking histamine, reducing sneezing and itching. It is a second-generation antihistamine, making it a preferred choice for daytime use without causing drowsiness.",
+    "image": "https://i.ibb.co.com/99BM30mT/fexofenadine.png",
+    "price": 8.99,
+    "quantity": 48,
+    "category": "Allergy",
+    "prescriptionRequired": "no",
+    "manufacturerName": "Sanofi",
+    "manufacturerDetails": "Sanofi is a global healthcare company focused on pharmaceutical innovation and public health solutions. Founded in 1973, Sanofi aims to improve lives worldwide.",
+    "expiryDate": "2025-08-30"
   }
+  
 ]

@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useTotalPrice } from "@/redux/features/checkoutSlice";
 import { useRouter } from "next/navigation";
+import { FaCcStripe } from "react-icons/fa6";
 
 const StripeForm = () => {
   const [clientSecret, setClientSecret] = useState("");
@@ -97,9 +98,14 @@ const StripeForm = () => {
 
   return (
     <div className="lg:flex-1">
-      <h1 className="mb-4 text-2xl text-center font-semibold text-gray-700">
-        Pay Here
+
+     <div className="flex gap-4 justify-center items-center">
+     <h1 className=" text-2xl text-center font-semibold text-gray-700 ">
+        Pay Here by Stripe 
       </h1>
+        <FaCcStripe className="text-4xl " />
+     </div>
+
       <form onSubmit={onSubmit}>
         <div className="bg-white p-2 rounded-xl my-4">
           <label
@@ -125,7 +131,7 @@ const StripeForm = () => {
             }}
           />
           <button
-            className="bg-orange-600 py-1 rounded-lg w-20 border-none text-white text-lg mt-6 hover:bg-orange-800 cursor-pointer"
+            className="bg-[#E5E7EB] py-1 rounded-lg w-20 border-none text-gray-700 text-lg mt-6 hover:bg-blue-400 cursor-pointer"
             type="submit"
             disabled={!stripe || !clientSecret}
           >

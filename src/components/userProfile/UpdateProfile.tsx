@@ -55,7 +55,7 @@ const UpdateProfile = ({ user }: { user: any }) => {
 
   return (
     <div className="lg:w-1/2 my-12 mx-auto flex justify-center items-center">
-      <div className="max-w-md w-full p-5 border-2 border-gray-300 rounded-xl bg-gray-200  flex-grow">
+      <div className="max-w-md w-full p-5 border-2 border-gray-300  bg-gray-200  flex-grow">
         <div>
           <h1 className="text-2xl font-semibold text-center">Update profile</h1>
         </div>
@@ -72,7 +72,7 @@ const UpdateProfile = ({ user }: { user: any }) => {
                     <Input
                       {...field}
                       value={field.value || ""}
-                      className="bg-gray-300 border-none mb-4"
+                      className="bg-gray-300 border-none mb-4 rounded-none"
                     />
                   </FormControl>
                 </FormItem>
@@ -90,7 +90,7 @@ const UpdateProfile = ({ user }: { user: any }) => {
                       type="email"
                       {...field}
                       value={field.value || ""}
-                      className="bg-gray-300 border-none mb-4"
+                      className="bg-gray-300 border-none mb-4 rounded-none"
                     />
                   </FormControl>
                 </FormItem>
@@ -107,7 +107,7 @@ const UpdateProfile = ({ user }: { user: any }) => {
                       type="text"
                       {...field}
                       value={field.value || ""}
-                      className="bg-gray-300 border-none mb-4"
+                      className="bg-gray-300 border-none mb-4 rounded-none"
                     />
                   </FormControl>
                 </FormItem>
@@ -124,7 +124,7 @@ const UpdateProfile = ({ user }: { user: any }) => {
                       type="text"
                       {...field}
                       value={field.value || ""}
-                      className="bg-gray-300 border-none"
+                      className="bg-gray-300 border-none rounded-none"
                     />
                   </FormControl>
                 </FormItem>
@@ -132,7 +132,7 @@ const UpdateProfile = ({ user }: { user: any }) => {
             />
 
             <Button
-              className="mt-5 w-full bg-orange-500 text-white hover:bg-orange-700 cursor-pointer"
+              className="mt-5 w-full rounded-none bg-orange-500 text-white hover:bg-orange-700 cursor-pointer"
               type="submit"
             >
               {isSubmitting ? "Submitting ..." : "Submit"}

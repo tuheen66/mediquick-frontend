@@ -9,6 +9,16 @@ import { Button } from "../ui/button";
 import { useUser } from "@/context/UserContext";
 import { logout } from "@/services/AuthService";
 import { protectedRoutes } from "@/constants";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
+import { AlignVerticalJustifyStart, LogOut } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 const Navbar = () => {
   const { user, setIsLoading } = useUser();
@@ -25,8 +35,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" bg-gray-200  text-slate-700 py-2 shadow-xl w-[90%] mx-auto px-4 rounded-lg">
-      <div className="flex flex-col lg:flex-row justify-between items-center">
+    <div className=" bg-gray-200  text-slate-700 py-2 shadow-xl sticky top-0 z-10  px-[5%]">
+      <div className="flex flex-col lg:flex-row gap-2 justify-between items-center">
         <div>
           <Link href="/" className="flex gap-2 items-center text-2xl font-bold">
             <Image
@@ -41,12 +51,13 @@ const Navbar = () => {
             </h2>
           </Link>
         </div>
-        <nav className=" flex flex-col  lg:flex-row flex-wrap justify-between items-center  gap-4 lg:gap-12">
+
+        <nav className="    flex-wrap justify-between items-center space-x-4 lg:gap-12">
           <Link
             href="/shop"
             className={
               pathname === "/shop"
-                ? " text-orange-500 font-semibold   rounded-lg"
+                ? " text-orange-500 font-semibold   "
                 : "hover:text-slate-500 hover:underline"
             }
           >
@@ -56,7 +67,7 @@ const Navbar = () => {
             href="/profile"
             className={
               pathname === "/profile"
-                ? " text-orange-500 font-semibold   rounded-lg"
+                ? " text-orange-500 font-semibold   "
                 : "hover:text-slate-500 hover:underline"
             }
           >
@@ -67,7 +78,7 @@ const Navbar = () => {
             href="/orders"
             className={
               pathname === "/orders"
-                ? " text-orange-500 font-semibold   rounded-lg"
+                ? " text-orange-500 font-semibold   "
                 : "hover:text-slate-500 hover:underline"
             }
           >
@@ -79,7 +90,7 @@ const Navbar = () => {
               href="/admin"
               className={
                 pathname === "/admin"
-                  ? " text-orange-500 font-semibold   rounded-lg"
+                  ? " text-orange-500 font-semibold  "
                   : "hover:text-slate-500 hover:underline"
               }
             >
@@ -93,22 +104,63 @@ const Navbar = () => {
             <FiShoppingCart className="text-xl" />
           </Link>
 
-          {user ? (
+          {/* {user ? (
             <>
               <p>{user?.email}</p>
               <Button
                 onClick={handleLogout}
-                className="bg-orange-500 hover:bg-orange-800 text-white cursor-pointer"
+                className="bg-orange-500 hover:bg-orange-800 text-white cursor-pointer rounded-none"
               >
                 Logout
               </Button>
             </>
           ) : (
             <Link href="/login">
-              <Button className="bg-orange-500  text-white  hover:bg-orange-800 cursor-pointer ">
+              <Button className="bg-orange-500  text-white  hover:bg-orange-800 cursor-pointer rounded-none ">
                 Login
               </Button>
             </Link>
+          )} */}
+          {user ? (
+            <>
+              
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <AlignVerticalJustifyStart className="rounded-full">
+                    <Avatar className="rounded-full">
+                      <AvatarImage src="https://github.com/shadcn.png" />
+                      <AvatarFallback>User</AvatarFallback>
+                    </Avatar>
+                  </AlignVerticalJustifyStart>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link href={`/${user?.role}/dashboard`}>Dashboard</Link>
+                  </DropdownMenuItem>
+                  
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem
+                    className="bg-orange-500 text-white rounded-none cursor-pointer"
+                    onClick={handleLogout}
+                  >
+                    <LogOut />
+                    <span>Log Out</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </>
+          ) : (
+            <>
+              <Link href="/login">
+                <Button className="rounded-full" variant="outline">
+                  Login
+                </Button>
+              </Link>
+            </>
           )}
         </div>
       </div>

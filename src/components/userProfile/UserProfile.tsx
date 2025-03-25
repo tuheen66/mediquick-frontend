@@ -41,7 +41,7 @@ const UserProfile = () => {
 
   return (
     <div className="">
-      <div className="flex flex-col justify-center items-center my-20 space-y-4 border-2 border-orange-500 shadow-xl shadow-slate-600 p-4 lg:w-1/2 mx-auto rounded-xl ">
+      <div className="flex flex-col justify-center items-center my-20 space-y-4  shadow-xl shadow-slate-600 p-4 lg:w-1/2 mx-auto ">
         <h2 className="text-xl lg:text-3xl text-gray-800">
           Welcome back <span className="font-bold">{currentUser?.name}</span>
         </h2>
@@ -57,7 +57,7 @@ const UserProfile = () => {
       </div>
       <div className="flex justify-center">
         <Link href={`/profile/${userId}`}>
-          <Button className="bg-orange-600 text-white hover:bg-orange-800 cursor-pointer">
+          <Button className="bg-orange-600 text-white rounded-none hover:bg-orange-800 cursor-pointer">
             Update your profile
           </Button>
         </Link>

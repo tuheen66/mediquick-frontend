@@ -18,19 +18,20 @@ import { NavMain } from "./nav-main";
 import Link from "next/link";
 
 import { NavAdmin } from "./nav-admin";
+import { useUser } from "@/context/UserContext";
 
 // This is sample data.
 const data = {
   navMain: [
     {
-      title: "Dashboard",
-      url: "/admin",
+      title: "Admin Dashboard",
+      url: "/admin/dashboard",
       icon: Bot,
       isActive: true,
       items: [
         {
           title: "Admin Home",
-          url: "/admin",
+          url: "/admin/dashboard",
         },
         {
           title: "Manage Medicines",
@@ -47,9 +48,38 @@ const data = {
       ],
     },
   ],
+  navCustomer: [
+    {
+      title: "Customer Dashboard",
+      url: "/customer/dashboard",
+      icon: Bot,
+      isActive: true,
+      items: [
+        {
+          title: "Customer Home",
+          url: "/customer/dashboard",
+        },
+        {
+          title: "Customer Profile",
+          url: "/customer/profile",
+        },
+        {
+          title: "Customer Orders",
+          url: "/customer/orders",
+        },
+      ],
+    },
+  ],
 };
 
+interface IUserProviderValues {
+  role: string | undefined;
+}
+
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const user = useUser();
+
+  console.log(user);
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -67,9 +97,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
+
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        {user && user?.user?.role === "admin" ? (
+          <NavMain items={data.navMain} />
+        ) : (
+          <NavMain items={data.navCustomer} />
+        )}
       </SidebarContent>
+
       <SidebarFooter>
         <NavAdmin />
       </SidebarFooter>

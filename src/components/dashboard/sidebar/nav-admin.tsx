@@ -16,25 +16,25 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { useUser } from "@/context/UserContext";
-// import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { logout } from "@/services/AuthService";
 import Link from "next/link";
-// import { protectedRoutes } from "@/constants";
+import { protectedRoutes } from "@/constants";
 
 export function NavAdmin() {
   const { isMobile } = useSidebar();
   const { user, setIsLoading } = useUser();
 
-  //   const router = useRouter();
-  //   const pathname = usePathname();
+    const router = useRouter();
+    const pathname = usePathname();
 
   const handleLogout = () => {
     logout();
     setIsLoading(true);
 
-    // if (protectedRoutes.some((route) => pathname.match(route))) {
-    //   router.push("/");
-    // }
+    if (protectedRoutes.some((route) => pathname.match(route))) {
+      router.push("/");
+    }
   };
 
   return (

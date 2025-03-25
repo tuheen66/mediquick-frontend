@@ -25,8 +25,8 @@ const CartProductCard = ({ medicine }: { medicine: CartProduct }) => {
   };
 
   return (
-    <div className="border-2 border-orange-500 rounded-xl p-4 ">
-      <div className="bg-white rounded-lg flex p-5 gap-5">
+    <div className="border-2 border-gray-300 p-2 ">
+      <div className="bg-white rounded-lg flex p-2 gap-5">
         <div className="h-full w-32 rounded-md overflow-hidden">
           <Image
             src={medicine.image}
@@ -54,7 +54,7 @@ const CartProductCard = ({ medicine }: { medicine: CartProduct }) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between p-2">
         <div className="flex items-center gap-2">
           <p className="text-gray-500 font-semibold">Quantity</p>
           <Button

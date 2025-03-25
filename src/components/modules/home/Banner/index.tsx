@@ -31,11 +31,11 @@ const Banner = () => {
             alt="hero1"
             width={1200}
             height={600}
-            className="w-full relative rounded-lg"
+            className="w-full relative"
           />
 
-          <div className="absolute rounded-xl top-0 right-0 text-gray-900 bg-black opacity-40 w-full h-full "></div>
-          <div className="absolute top-[75%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
+          <div className="absolute  top-0 right-0 text-gray-900 bg-black opacity-30 w-full h-full "></div>
+          <div className="absolute top-[70%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
             <h2 className=" md:text-4xl lg:text-5xl font-bold">Reliable</h2>
             <p className="text-xl">
               Your trusted partner for genuine medicines, delivered to your
@@ -49,10 +49,10 @@ const Banner = () => {
             alt="hero2"
             width={1200}
             height={600}
-            className="w-full rounded-lg"
+            className="w-full"
           />
-          <div className="absolute rounded-xl top-0 right-0 text-gray-900 bg-black opacity-40 w-full h-full "></div>
-          <div className="absolute top-[75%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
+          <div className="absolute  top-0 right-0 text-gray-900 bg-black opacity-30 w-full h-full "></div>
+          <div className="absolute top-[70%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
             <h2 className=" md:text-4xl lg:text-5xl font-bold">Affordable</h2>
             <p className="text-xl">
               Quality healthcare at your fingertips, without breaking the bank
@@ -66,10 +66,10 @@ const Banner = () => {
             alt="hero3"
             width={1200}
             height={600}
-            className="w-full rounded-lg"
+            className="w-full "
           />
-          <div className="absolute rounded-xl top-0 right-0 text-gray-900 bg-black opacity-40 w-full h-full "></div>
-          <div className="absolute top-[75%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
+          <div className="absolute  top-0 right-0 text-gray-900 bg-black opacity-30 w-full h-full "></div>
+          <div className="absolute top-[70%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
             <h2 className=" md:text-4xl lg:text-5xl font-bold">Convenient</h2>
             <p className="text-xl">
               Order prescriptions online, anytime, with fast and hassle-free

@@ -6,17 +6,19 @@ import MedicineCard from "@/components/medicineCard/MedicineCard";
 import { IMedicine } from "@/types";
 import { getAllMedicines } from "@/services/MedicineService";
 import { Button } from "@/components/ui/button";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 // Predefined category list
 const categories = [
   "All",
-  "Painkiller",
+  "Pain Relief",
   "Antibiotics",
   "Gastrointestinal",
   "Cardiovascular",
   "Supplements",
   "Allergy",
   "Diabetes",
+  "Endocrine",
 ];
 
 // Predefined prescription filter options
@@ -35,6 +37,8 @@ const Shop = () => {
   const [minPrice, setMinPrice] = useState(""); // Reset after reload
   const [maxPrice, setMaxPrice] = useState(""); // Reset after reload
   const [sortBy, setSortBy] = useState(""); // Sorting state
+  const [currentPage, setCurrentPage] = useState(1); // Current page state
+  const itemsPerPage = 8; // Number of items per page
 
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -101,106 +105,154 @@ const Shop = () => {
     });
   };
 
+  // Pagination logic
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredMedicines.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
+
+  const totalPages = Math.ceil(filteredMedicines.length / itemsPerPage);
+
   return (
-    <div className="">
-      {/* Filters Section */}
-      <div className="mb-4 flex  gap-4 flex-wrap justify-between  py-4 px-2 bg-gray-200 rounded-xl">
-        {/* Category Filter */}
-        <div>
-          <label className="mr-2 font-semibold text-gray-700">Category:</label>
-          <select
-            className="p-2 border rounded-md"
-            value={selectedCategory}
-            onChange={(e) =>
-              handleFilterChange(e.target.value, selectedPrescription)
-            }
+    <div className="flex flex-col lg:flex-row  gap-2 justify-between">
+      <div className="w-full lg:w-1/5">
+        {/* Filters Section */}
+        <div className="mb-4 flex flex-col md:flex-row lg:flex-col gap-4 flex-wrap justify-between  py-4 px-2  border border-gray-300">
+          {/* Category Filter */}
+          <div>
+            <label className="mr-2  text-gray-700">Category:</label>
+            <select
+              className="p-1 border border-gray-300 text-gray-700"
+              value={selectedCategory}
+              onChange={(e) =>
+                handleFilterChange(e.target.value, selectedPrescription)
+              }
+            >
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Prescription Required Filter */}
+          <div>
+            <label className="mr-2  text-gray-700">
+              Prescription Required:
+            </label>
+            <select
+              className="p-1 border border-gray-300 text-gray-700"
+              value={selectedPrescription}
+              onChange={(e) =>
+                handleFilterChange(selectedCategory, e.target.value)
+              }
+            >
+              {prescriptionOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Price Range Filter */}
+          <div>
+            <label className="mr-2  text-gray-700 mb-2">Price Range:</label>
+            <div>
+              <input
+                type="number"
+                placeholder="Min"
+                className="p-1 border border-gray-300 w-20 mr-2"
+                value={minPrice}
+                onChange={(e) => setMinPrice(e.target.value)}
+              />
+              <input
+                type="number"
+                placeholder="Max"
+                className="p-1 border border-gray-300 w-20"
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(e.target.value)}
+              />
+            </div>
+          </div>
+
+          {/* Price Sorting Filter */}
+          <div>
+            <label className="mr-2  text-gray-700">Sort by Price:</label>
+            <select
+              className="p-1 border border-gray-300 text-gray-700 mt-2"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+            >
+              {sortOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Reset Button */}
+          <Button
+            className=" bg-orange-500 hover:bg-orange-700 text-white  rounded-none"
+            onClick={() => {
+              setMinPrice(""); // Reset min price
+              setMaxPrice(""); // Reset max price
+              setSortBy(""); // Reset sorting
+              router.push(`?category=All&prescription=All`, { scroll: false }); // Reset other filters
+            }}
           >
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
+            Reset Filters
+          </Button>
         </div>
-
-        {/* Prescription Required Filter */}
-        <div>
-          <label className="mr-2 font-semibold text-gray-700">
-            Prescription Required:
-          </label>
-          <select
-            className="p-2 border rounded-md"
-            value={selectedPrescription}
-            onChange={(e) =>
-              handleFilterChange(selectedCategory, e.target.value)
-            }
-          >
-            {prescriptionOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Price Range Filter */}
-        <div>
-          <label className="mr-2 font-semibold text-gray-700">
-            Price Range:
-          </label>
-          <input
-            type="number"
-            placeholder="Min"
-            className="p-2 border rounded-md w-20 mr-2"
-            value={minPrice}
-            onChange={(e) => setMinPrice(e.target.value)}
-          />
-          <input
-            type="number"
-            placeholder="Max"
-            className="p-2 border rounded-md w-20"
-            value={maxPrice}
-            onChange={(e) => setMaxPrice(e.target.value)}
-          />
-        </div>
-
-        {/* Price Sorting Filter */}
-        <div>
-          <label className="mr-2 font-semibold text-gray-700">
-            Sort by Price:
-          </label>
-          <select
-            className="p-2 border rounded-md"
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-          >
-            {sortOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Reset Button */}
-        <Button
-          className=" bg-orange-500 text-white hover:bg-orange-800"
-          onClick={() => {
-            setMinPrice(""); // Reset min price
-            setMaxPrice(""); // Reset max price
-            setSortBy(""); // Reset sorting
-            router.push(`?category=All&prescription=All`, { scroll: false }); // Reset other filters
-          }}
-        >
-          Reset Filters
-        </Button>
       </div>
 
       {/* Medicine Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mt-4">
-        {filteredMedicines.map((medicine) => (
-          <MedicineCard key={medicine._id} medicine={medicine} />
-        ))}
+      <div className="w-full  lg:w-4/5 ">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+          {currentItems.map((medicine) => (
+            <MedicineCard key={medicine._id} medicine={medicine} />
+          ))}
+        </div>
+
+        {/* Pagination Controls */}
+        <div className="flex justify-center mt-4">
+          {/* Previous Button */}
+          <Button
+            className="mr-2"
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage((prev) => prev - 1)}
+          >
+            <FaLongArrowAltLeft />
+          </Button>
+
+          {/* Page Number Buttons */}
+          {Array.from({ length: totalPages }, (_, index) => (
+            <Button
+              key={index + 1}
+              className={`mx-1 ${
+                currentPage === index + 1
+                  ? "bg-orange-500 text-white"
+                  : "bg-gray-200 text-gray-700"
+              }`}
+              onClick={() => setCurrentPage(index + 1)}
+            >
+              {index + 1}
+            </Button>
+          ))}
+
+          {/* Next Button */}
+          <Button
+            className="ml-2"
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage((prev) => prev + 1)}
+          >
+            <FaLongArrowAltRight />
+          </Button>
+        </div>
       </div>
     </div>
   );

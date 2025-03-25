@@ -63,10 +63,10 @@ const Address = () => {
         <p className="text-gray-500">Enter your address.</p>
         <div className="mt-5">
           <Select onValueChange={(city) => handleCitySelect(city)}>
-            <SelectTrigger className="mb-5 ">
-              <SelectValue placeholder="Select a city" />
+            <SelectTrigger className="mb-5 rounded-none">
+              <SelectValue placeholder="Select a city" className="rounded-none"/>
             </SelectTrigger>
-            <SelectContent className="bg-slate-100">
+            <SelectContent className="bg-slate-100 rounded-none">
               {cities.map((city) => (
                 <SelectItem key={city} value={city}>
                   {city}
@@ -78,7 +78,7 @@ const Address = () => {
           <Textarea
             onChange={(e) => handleShippingAddress(e.target.value)}
             rows={5}
-            className="border-1 border-gray-500 rounded-xl w-full"
+            className="border-1 border-gray-500 rounded-none w-full"
           />
 
           {requiresPrescription && 
@@ -87,6 +87,7 @@ const Address = () => {
               onChange={handlePrescriptionLink}
               type="text"
               placeholder="write your prescription link here"
+              className="rounded-none"
             />
           </div>
           }

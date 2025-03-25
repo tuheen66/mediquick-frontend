@@ -13,6 +13,7 @@ import {
 
 interface IUserProviderValues {
   user: IUser | null;
+  role?:string ;
   isLoading: boolean;
   setUser: (user: IUser | null) => void;
   setIsLoading: Dispatch<SetStateAction<boolean>>;

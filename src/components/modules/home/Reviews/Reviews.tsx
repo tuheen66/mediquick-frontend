@@ -12,7 +12,7 @@ import { Pagination, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/parallax";
 import "swiper/css/autoplay";
-import 'swiper/css/pagination';
+import "swiper/css/pagination";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -35,13 +35,12 @@ const Reviews = () => {
   }, []);
 
   return (
-    <div className="mt-8">
-      <h2 className="text-2xl font-bold text-center mb-4">Customer Reviews</h2>
+    <div className="my-12 ">
+      <h2 className="text-2xl font-bold text-center mb-8">Customer Reviews</h2>
 
-      <div>
+      <div className="w-[90%] mx-auto">
         <Swiper
           className="mySwiper "
-          
           modules={[Pagination, A11y]}
           spaceBetween={40}
           slidesPerView={1}
@@ -49,14 +48,16 @@ const Reviews = () => {
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
         >
-          {reviews.map((review: TReview, index: number) => (
-            <SwiperSlide key={index}>
-              <div className="p-4 bg-gray-200 rounded-xl  ">
-                <h3 className="font-semibold">{review.name}</h3>
-                <p className="text-gray-700 mt-2">{review.review}</p>
-              </div>
-            </SwiperSlide>
-          ))}
+          <div className=" ">
+            {reviews.map((review: TReview, index: number) => (
+              <SwiperSlide key={index}>
+                <div className="p-4  border-1 border-gray-300 mx-1  ">
+                  <h3 className="font-semibold">{review.name}</h3>
+                  <p className="text-gray-700 mt-2">{review.review}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </div>
         </Swiper>
       </div>
     </div>

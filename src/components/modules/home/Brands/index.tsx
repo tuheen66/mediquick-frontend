@@ -18,7 +18,7 @@ import Image from "next/image";
 
 const Brands = () => {
   return (
-    <div className="mt-4 bg-gray-200 px-4 rounded-xl">
+    <div className="mt-4 bg-gray-200 px-[5%] ">
       <Swiper
         className="mySwiper "
         // install Swiper modules

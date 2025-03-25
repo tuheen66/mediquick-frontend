@@ -8,22 +8,21 @@ import Link from "next/link";
 const CartPage = () => {
   return (
     <div className="">
-        <CartBanner/>
-        <div className="  text-neutral-content">
-                <div className=" my-4 flex justify-between items-center w-1/2 ">
-                  <h1 className=" text-3xl text-gray-800 font-bold">Your cart</h1>
-        
-                  <Link href={"/shop"}>
-                    <Button className="bg-orange-500 hover:bg-orange-800 text-white cursor-pointer">
-                      Buy more
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-      <div className="flex flex-col md:flex-row justify-around min-h-screen">
+      <CartBanner />
+      <div className="  text-neutral-content lg:mt-20 mb-12">
+        <div className="flex flex-col justify-center items-center gap-8 my-4 mx-auto">
+          <h1 className=" text-3xl text-gray-800 font-bold">Your cart</h1>
+
+          <Link href={"/shop"}>
+            <Button className="bg-orange-500 rounded-none hover:bg-orange-800 text-white cursor-pointer">
+              Buy more
+            </Button>
+          </Link>
+        </div>
+      </div>
+      <div className="flex flex-col md:flex-row justify-around min-h-40">
         <CartProduct />
-        <Payments/>
-       
+        <Payments />
       </div>
     </div>
   );
