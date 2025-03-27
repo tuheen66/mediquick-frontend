@@ -7,7 +7,7 @@ export interface IUser {
   phone?: string;
   address?: string;
   password?: string;
-  role: string;
+  role?: string;
 }
 
 export interface User {

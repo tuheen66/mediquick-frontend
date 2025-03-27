@@ -7,7 +7,7 @@ const ManageMedicinePge =async () => {
   
 
   return (
-    <div>
+    <div className='w-[95%] '>
       <ManageMedicine/>
     </div>
   );

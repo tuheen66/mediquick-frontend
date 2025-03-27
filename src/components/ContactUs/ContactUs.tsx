@@ -18,7 +18,7 @@ const ContactUs = () => {
         <Image src={contact} alt="Contact Us" width={1400} height={400} />
         <div className="absolute  top-0 right-0 text-gray-900 bg-black opacity-30 w-full h-full "></div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-white text-4xl font-bold">Contact Us</h1>
+          <h1 className="text-white text-xl md:text-2xl lg:text-4xl font-bold">Contact Us</h1>
         </div>
       </div>
 

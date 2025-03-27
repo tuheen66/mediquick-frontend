@@ -1,9 +1,10 @@
+import CustomerOrders from "@/components/customerOrders/CustomerOrders";
 
 
 const CustomerOrderPage = () => {
     return (
         <div>
-            <h2>Customer Order Page</h2>
+            <CustomerOrders/>
         </div>
     );
 };

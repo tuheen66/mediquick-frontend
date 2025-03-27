@@ -8,7 +8,7 @@
     "category": "Pain Relief",
     "prescriptionRequired": "no",
     "manufacturerName": "Johnson & Johnson",
-    "manufacturerDetail": "Johnson & Johnson is a global leader in the pharmaceutical industry, known for producing high-quality and reliable medications. Founded in 1886, the company is committed to improving health and well-being through innovative products.",
+    "manufacturerDetails": "Johnson & Johnson is a global leader in the pharmaceutical industry, known for producing high-quality and reliable medications. Founded in 1886, the company is committed to improving health and well-being through innovative products.",
     "expiryDate": "2025-12-31"
   },
   {
@@ -92,7 +92,7 @@
     "category": "Allergy",
     "prescriptionRequired": "no",
     "manufacturerName": "Bayer",
-    "manufacturer": "Bayer is a global enterprise with core competencies in the life science fields of healthcare and agriculture. Founded in 1863, Bayer is committed to improving quality of life through innovative products.",
+    "manufacturerDetails": "Bayer is a global enterprise with core competencies in the life science fields of healthcare and agriculture. Founded in 1863, Bayer is committed to improving quality of life through innovative products.",
     "expiryDate": "2025-06-30"
   },
   {
@@ -191,5 +191,4 @@
     "manufacturerDetails": "Sanofi is a global healthcare company focused on pharmaceutical innovation and public health solutions. Founded in 1973, Sanofi aims to improve lives worldwide.",
     "expiryDate": "2025-08-30"
   }
-  
 ]

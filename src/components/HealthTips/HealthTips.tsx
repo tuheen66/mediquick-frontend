@@ -74,11 +74,11 @@ const HealthTips = () => {
         <div className="absolute  top-0 right-0 text-gray-900 bg-black opacity-40 w-full h-full "></div>
 
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center mb-10">
-            <h1 className="text-3xl font-bold text-white sm:text-4xl mb-3">
+          <div className="text-center lg:mb-10">
+            <h1 className="text-xl md:text-2xl lg:text-4xl font-bold text-white mb-3">
               Health & Wellness Guide
             </h1>
-            <p className="text-lg text-white max-w-2xl mx-auto">
+            <p className="text-md lg:text-lg text-white max-w-2xl mx-auto">
               Expert-curated advice for preventive care, nutrition, and holistic
               well-being
             </p>

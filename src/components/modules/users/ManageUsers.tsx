@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/table";
 import { IUser } from "@/types";
 import Link from "next/link";
+import Image from "next/image";
 
 const ManageUsers = ({ users }: { users: IUser[] }) => {
   return (
@@ -18,6 +19,7 @@ const ManageUsers = ({ users }: { users: IUser[] }) => {
       <Table>
         <TableHeader className="font-bold">
           <TableRow>
+            <TableHead>Image</TableHead>
             <TableHead>Name</TableHead>
             <TableHead>Email</TableHead>
             <TableHead>Address</TableHead>
@@ -29,6 +31,9 @@ const ManageUsers = ({ users }: { users: IUser[] }) => {
         <TableBody>
           {users?.map((user: IUser) => (
             <TableRow key={user._id}>
+              <TableCell>
+                <Image src={user.image} alt="image"  width={50} height={50}  />
+                </TableCell>
               <TableCell>{user.name}</TableCell>
               <TableCell>{user.email}</TableCell>
               <TableCell>{user.address}</TableCell>

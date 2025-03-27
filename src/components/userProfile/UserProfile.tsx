@@ -67,7 +67,7 @@ const UserProfile = () => {
 
 
       <div className="flex justify-center">
-        <Link href={`/profile/${userId}`}>
+        <Link href={`/customer/dashboard/${userId}`}>
           <Button className="bg-orange-600 text-white rounded-none hover:bg-orange-800 cursor-pointer">
             Update your profile
           </Button>

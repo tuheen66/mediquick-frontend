@@ -35,7 +35,7 @@ const Banner = () => {
           />
 
           <div className="absolute  top-0 right-0 text-gray-900 bg-black opacity-30 w-full h-full "></div>
-          <div className="absolute top-[70%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
+          <div className="absolute top-[40%] left-[10%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
             <h2 className=" md:text-4xl lg:text-5xl font-bold">Reliable</h2>
             <p className="text-xl">
               Your trusted partner for genuine medicines, delivered to your
@@ -52,7 +52,7 @@ const Banner = () => {
             className="w-full"
           />
           <div className="absolute  top-0 right-0 text-gray-900 bg-black opacity-30 w-full h-full "></div>
-          <div className="absolute top-[70%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
+          <div className="absolute top-[40%] left-[10%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
             <h2 className=" md:text-4xl lg:text-5xl font-bold">Affordable</h2>
             <p className="text-xl">
               Quality healthcare at your fingertips, without breaking the bank
@@ -69,7 +69,7 @@ const Banner = () => {
             className="w-full "
           />
           <div className="absolute  top-0 right-0 text-gray-900 bg-black opacity-30 w-full h-full "></div>
-          <div className="absolute top-[70%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
+          <div className="absolute top-[40%] left-[10%] lg:left-[25%] text-white space-y-4 text-center invisible md:visible">
             <h2 className=" md:text-4xl lg:text-5xl font-bold">Convenient</h2>
             <p className="text-xl">
               Order prescriptions online, anytime, with fast and hassle-free

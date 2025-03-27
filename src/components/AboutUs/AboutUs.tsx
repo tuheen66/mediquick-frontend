@@ -11,9 +11,9 @@ const AboutUs = () => {
   return (
     <div className="font-sans bg-gray-100">
       {/* Hero Section */}
-      <div className=" flex justify-between mx-auto">
+      <div className=" flex flex-col-reverse  lg:flex-row justify-between mx-auto">
         <div className=" flex flex-1 justify-center items-center bg-blue-100 ">
-          <div className="mx-16">
+          <div className="mx-16 py-4 lg:p-0">
             <h1 className="text-3xl tracking-tight font-extrabold text-gray-800 sm:text-3xl md:text-4xl">
               <span className="block">About Mediquick</span>
               <span className="block text-orange-500">

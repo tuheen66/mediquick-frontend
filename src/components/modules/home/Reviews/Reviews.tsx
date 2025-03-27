@@ -22,17 +22,19 @@ import { TReviews } from "@/types/review";
 const Reviews = () => {
   const [reviews, setReviews] = useState<TReviews[]>([]);
 
- useEffect(() => {
-     const fetchReviews = async () => {
-       const { data } = await getAllReviews();
-       setReviews(data);
-     };
-     fetchReviews();
-   }, []);
+  useEffect(() => {
+    const fetchReviews = async () => {
+      const { data } = await getAllReviews();
+      setReviews(data);
+    };
+    fetchReviews();
+  }, []);
 
   return (
     <div className="my-12 ">
-      <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Customer Reviews</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+        Customer Reviews
+      </h2>
 
       <div className="w-[90%] mx-auto">
         <Swiper
@@ -56,7 +58,9 @@ const Reviews = () => {
                       width={70}
                       height={70}
                     />
-                    <h3 className="font-semibold text-lg text-gray-800">{review.name}</h3>
+                    <h3 className="font-semibold text-lg text-gray-800">
+                      {review.name}
+                    </h3>
                   </div>
 
                   <div>

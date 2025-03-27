@@ -24,8 +24,8 @@
 
 // export default StoreProvider;
 
-
 "use client";
+import LoadingSpinner from "@/components/loadingSpinner/LoadingSpinner";
 import { AppStore, makeStore } from "@/redux/store";
 import { ReactNode } from "react";
 import { Provider } from "react-redux";
@@ -39,7 +39,7 @@ const persistedStore = persistStore(store);
 const StoreProvider = ({ children }: { children: ReactNode }) => {
   return (
     <Provider store={store}>
-      <PersistGate loading={<p>Loading...</p>} persistor={persistedStore}>
+      <PersistGate loading=<LoadingSpinner size="xl" color="text-orange-600" /> persistor={persistedStore}>
         {children}
       </PersistGate>
     </Provider>

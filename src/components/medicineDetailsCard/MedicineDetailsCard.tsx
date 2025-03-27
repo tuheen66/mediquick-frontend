@@ -30,6 +30,8 @@ const MedicineDetailsCard = ({ medicine }: { medicine: IMedicine }) => {
     fetchSimilarMedicines();
   }, [medicine]);
 
+  
+
   return (
     <div className="my-12">
       {/* Medicine Title */}

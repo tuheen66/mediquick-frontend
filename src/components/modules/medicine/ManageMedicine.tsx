@@ -50,7 +50,7 @@ const ManageMedicine = () => {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <div className="flex justify-end mb-2">
         <Link href="/admin/addMedicine">
           <Button className="bg-orange-500 text-white hover:bg-orange-800">
@@ -58,7 +58,7 @@ const ManageMedicine = () => {
           </Button>
         </Link>
       </div>
-      <Table>
+      <Table className="w-full">
         <TableHeader className="font-bold">
           <TableRow>
             <TableHead className="w-[100px]">Image</TableHead>

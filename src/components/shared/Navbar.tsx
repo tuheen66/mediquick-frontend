@@ -52,56 +52,147 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <nav className=" flex-wrap justify-between items-center lg:space-x-8 lg:gap-12">
+        <nav className="flex flex-wrap justify-center lg:justify-between items-center gap-4 lg:gap-12">
+          {/* Original Shop Link */}
           <Link
             href="/shop"
             className={
               pathname === "/shop"
-                ? " text-orange-500 font-semibold   "
+                ? "text-orange-500 font-semibold"
                 : "hover:text-slate-500 hover:underline"
             }
           >
             Shop
           </Link>
 
+          {/* Separate MegaMenu Trigger */}
+          <div className="group relative">
+            <button className="hover:text-slate-500 hover:underline">
+              Categories
+            </button>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-screen max-w-4xl bg-gray-200 shadow-lg py-3 z-50 border-t border-orange-300 hidden group-hover:block">
+              <div className="container mx-auto px-4">
+                <div className="grid grid-cols-3 gap-4">
+                  {/* Column 1: Medicine Categories */}
+                  <div className="px-3">
+                    <h3 className="text-orange-500 text-sm font-semibold mb-2">
+                      Medicines
+                    </h3>
+                    <ul className="space-y-1">
+                      <li>
+                        <Link
+                          href="/shop?category=All&prescription=Yes"
+                          className="text-gray-700 hover:text-orange-500 hover:underline text-sm block"
+                        >
+                          Prescription
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link
+                          href="/shop?category=Painkiller&prescription=All"
+                          className="text-gray-700 hover:text-orange-500 hover:underline text-sm block"
+                        >
+                          Painkiller
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/shop?category=Antibiotics&prescription=All"
+                          className="text-gray-700 hover:text-orange-500 hover:underline text-sm block"
+                        >
+                          Antibiotics
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Column 2: Health Concerns */}
+                  <div className="px-3 border-l border-gray-100">
+                    <h3 className="text-orange-500 text-sm font-semibold mb-2">
+                      Health
+                    </h3>
+                    <ul className="space-y-1">
+                      <li>
+                        <Link
+                          href="/shop?category=Gastrointestinal&prescription=All"
+                          className="text-gray-700 hover:text-orange-500 hover:underline text-sm block"
+                        >
+                          Gastrointestinal
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/shop?category=Cardiovascular&prescription=All"
+                          className="text-gray-700 hover:text-orange-500 hover:underline text-sm block"
+                        >
+                          Cardiovascular
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/shop?category=Supplements&prescription=All"
+                          className="text-gray-700 hover:text-orange-500 hover:underline text-sm block"
+                        >
+                          Supplements
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Column 3: Wellness */}
+                  <div className="px-3 border-l border-gray-100">
+                    <h3 className="text-orange-500 text-sm font-semibold mb-2">
+                      Wellness
+                    </h3>
+                    <ul className="space-y-1">
+                      <li>
+                        <Link
+                          href="/shop?category=Allergy&prescription=All"
+                          className="text-gray-700 hover:text-orange-500 hover:underline text-sm block"
+                        >
+                          Allergy
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/shop?category=Diabetes&prescription=All"
+                          className="text-gray-700 hover:text-orange-500 hover:underline text-sm block"
+                        >
+                          Diabetes
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/shop?category=Endocrine&prescription=All"
+                          className="text-gray-700 hover:text-orange-500 hover:underline text-sm block"
+                        >
+                          Endocrine
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <Link
             href="/health"
             className={
               pathname === "/health"
-                ? " text-orange-500 font-semibold   "
+                ? "text-orange-500 font-semibold"
                 : "hover:text-slate-500 hover:underline"
             }
           >
             Health Tips
           </Link>
-          
-          {/* <Link
-            href="/profile"
-            className={
-              pathname === "/profile"
-                ? " text-orange-500 font-semibold   "
-                : "hover:text-slate-500 hover:underline"
-            }
-          >
-            Profile
-          </Link> */}
-
-          {/* <Link
-            href="/orders"
-            className={
-              pathname === "/orders"
-                ? " text-orange-500 font-semibold   "
-                : "hover:text-slate-500 hover:underline"
-            }
-          >
-            Orders
-          </Link> */}
 
           <Link
             href="/about"
             className={
               pathname === "/about"
-                ? " text-orange-500 font-semibold   "
+                ? "text-orange-500 font-semibold"
                 : "hover:text-slate-500 hover:underline"
             }
           >
@@ -112,32 +203,17 @@ const Navbar = () => {
             href="/contact"
             className={
               pathname === "/contact"
-                ? " text-orange-500 font-semibold   "
+                ? "text-orange-500 font-semibold"
                 : "hover:text-slate-500 hover:underline"
             }
           >
             Contact Us
           </Link>
-
-          
-
-          {user?.role === "admin" && (
-            <Link
-              href="/admin"
-              className={
-                pathname === "/admin"
-                  ? " text-orange-500 font-semibold  "
-                  : "hover:text-slate-500 hover:underline"
-              }
-            >
-              Dashboard
-            </Link>
-          )}
         </nav>
 
         <div className="flex justify-center items-center gap-4">
           <Link href="/cart">
-            <FiShoppingCart className="text-xl" />
+            <FiShoppingCart className="text-2xl text-orange-500" />
           </Link>
 
           {user ? (
@@ -145,9 +221,12 @@ const Navbar = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <AlignVerticalJustifyStart className="rounded-full">
-                    <Avatar className="rounded-full">
-                      <AvatarImage src="https://github.com/shadcn.png" />
-                      <AvatarFallback>User</AvatarFallback>
+                    <Avatar>
+                      <AvatarImage
+                        src={"https://github.com/shadcn.png"}
+                        alt="@shadcn"
+                      />
+                      <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                   </AlignVerticalJustifyStart>
                 </DropdownMenuTrigger>
@@ -155,7 +234,6 @@ const Navbar = () => {
                 <DropdownMenuContent>
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
                   <DropdownMenuItem>
                     <Link href={`/${user?.role}/dashboard`}>Dashboard</Link>
                   </DropdownMenuItem>
@@ -174,7 +252,7 @@ const Navbar = () => {
           ) : (
             <>
               <Link href="/login">
-                <Button className="rounded-none border-1 border-gray-500" >
+                <Button className="rounded-none border-1 border-gray-500">
                   Login
                 </Button>
               </Link>

@@ -25,12 +25,13 @@ export function NavAdmin() {
   const { isMobile } = useSidebar();
   const { user, setIsLoading } = useUser();
 
-    const router = useRouter();
-    const pathname = usePathname();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleLogout = () => {
     logout();
     setIsLoading(true);
+    router.push("/");
 
     if (protectedRoutes.some((route) => pathname.match(route))) {
       router.push("/");
@@ -59,7 +60,7 @@ export function NavAdmin() {
             align="end"
             sideOffset={4}
           >
-            <DropdownMenuItem >
+            <DropdownMenuItem>
               <HomeIcon />
               <Link href={"/"}>Home</Link>
             </DropdownMenuItem>

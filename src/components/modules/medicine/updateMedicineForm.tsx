@@ -243,7 +243,7 @@ const UpdateMedicineForm = ({ medicine }: { medicine: IMedicine }) => {
                   <FormLabel>Medicine Description</FormLabel>
                   <FormControl>
                     <textarea
-                      className="h-36 resize-none border rounded-lg mb-4"
+                      className="h-36 resize-none border rounded-lg mb-4 p-2"
                       {...field}
                       value={field.value || ""}
                     />
@@ -260,7 +260,7 @@ const UpdateMedicineForm = ({ medicine }: { medicine: IMedicine }) => {
                   <FormLabel>Manufacturer Details</FormLabel>
                   <FormControl>
                     <textarea
-                      className="h-36 resize-none border rounded-lg"
+                      className="h-36 resize-none border rounded-lg p-2"
                       {...field}
                       value={field.value || ""}
                     />

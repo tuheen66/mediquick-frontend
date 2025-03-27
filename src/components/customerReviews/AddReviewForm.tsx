@@ -83,7 +83,7 @@ const AddReviewForm = () => {
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="">
-          <div className="flex gap-8 justify-between items-center mb-4">
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-between items-center mb-4">
             <FormField
               control={form.control}
               name="name"

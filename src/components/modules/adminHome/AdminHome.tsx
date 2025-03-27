@@ -1,19 +1,12 @@
 "use client";
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import MedicineStock from "@/components/medicineStock/MedicineStock";
+import Revenue from "@/components/revenue/Revenue";
+import RevenuePie from "@/components/revenuePie/RevenuePie";
 import { featuredMedicine } from "@/services/MedicineService";
 import { getAllOrders, getRevenue } from "@/services/OrderService";
 import { IMedicine, TOrder } from "@/types";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import { TbCurrencyTaka } from "react-icons/tb";
 
 const AdminHome = () => {
   const [orders, setOrders] = useState<TOrder[]>([]);
@@ -43,54 +36,53 @@ const AdminHome = () => {
     fetchData();
   }, []);
 
-  console.log(medicines?.length);
-
   return (
-    <div className="grid lg:grid-cols-3 gap-4 w-[90%] mx-auto">
-      <div className="flex flex-col justify-center items-center border-1 border-orange-600 rounded-xl p-4 w-64 h-40 space-y-8 mx-auto">
-        <p className="text-5xl font-bold text-orange-500">{orders?.length}</p>
-        <h2 className="text-2xl font-semibold text-gray-700">
-          Number of Orders{" "}
-        </h2>
-      </div>
-      <div className="flex flex-col justify-center items-center border-1 border-orange-600 rounded-xl p-4 w-64 h-40 space-y-8 mx-auto">
-        <div className="flex">
-          <p className="text-5xl font-bold text-gray-700 ">
-            Tk <span className="text-5xl font-bold text-orange-500">{revenue}</span>
+    <div>
+      <div className="grid lg:grid-cols-3 gap-4 w-[90%] mx-auto mb-4">
+        <div className="flex flex-col justify-center items-center border-1 border-orange-600  p-4 w-72 h-40 space-y-8 mx-auto">
+          <p className="text-5xl font-bold text-orange-500">
+            {medicines?.length}
           </p>
+          <h2 className="text-2xl font-semibold text-gray-700">
+            Number of Medicines{" "}
+          </h2>
         </div>
-        <h2 className="text-2xl font-semibold text-gray-700">Total Revenue</h2>
+        <div className="flex flex-col justify-center items-center border-1 border-orange-600  p-4 w-72 h-40 space-y-8 mx-auto">
+          <p className="text-5xl font-bold text-orange-500">{orders?.length}</p>
+          <h2 className="text-2xl font-semibold text-gray-700">
+            Number of Orders{" "}
+          </h2>
+        </div>
+        <div className="flex flex-col justify-center items-center border-1 border-orange-600  p-4 w-72 h-40 space-y-8 mx-auto">
+          <div className="flex">
+            <p className="text-5xl font-bold text-gray-700 ">
+              Tk{" "}
+              <span className="text-5xl font-bold text-orange-500">
+                {revenue}
+              </span>
+            </p>
+          </div>
+          <h2 className="text-2xl font-semibold text-gray-700">
+            Total Revenue
+          </h2>
+        </div>
+      </div>
+      <hr className="my-12 border-1 border-b border-gray-300" />
+      <div>
+        <h2 className=" text-2xl text-gray-800">
+          Revenue per order as percentage of total revenue
+        </h2>
+        <RevenuePie />
       </div>
 
-      <div className="">
-        <h2 className="text-2xl font-semibold text-gray-700 mb-2">Stock of Medicines:</h2>
-        <Table>
-          <TableHeader className="font-bold">
-            <TableRow>
-              <TableHead className="w-[100px]">Image</TableHead>
-              <TableHead>Name</TableHead>
+      <div>
+        <h2 className=" text-2xl text-gray-800">Revenue per order</h2>
+        <Revenue />
+      </div>
 
-              <TableHead>Quantity</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {medicines?.map((medicine: IMedicine) => (
-              <TableRow key={medicine._id}>
-                <TableCell className="font-medium">
-                  <Image
-                    src={medicine.image}
-                    width={50}
-                    height={50}
-                    alt="image"
-                  />
-                </TableCell>
-                <TableCell>{medicine.name}</TableCell>
-
-                <TableCell>{medicine.quantity} units</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+      <div>
+        <h2 className=" text-2xl text-gray-800">Stock per order</h2>
+        <MedicineStock />
       </div>
     </div>
   );
