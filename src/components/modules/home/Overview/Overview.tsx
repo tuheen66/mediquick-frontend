@@ -16,7 +16,7 @@ const Overview = () => {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <Link href="/shop">
-            <Button className=" bg-orange-600 text-white rounded-none hover:bg-orange-800 cursor-pointer">
+            <Button className=" bg-orange-500 text-white rounded-none hover:bg-orange-800 cursor-pointer">
               Shop Now
             </Button>
           </Link>

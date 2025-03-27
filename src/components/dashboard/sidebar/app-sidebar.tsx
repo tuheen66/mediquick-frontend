@@ -56,16 +56,17 @@ const data = {
       isActive: true,
       items: [
         {
-          title: "Customer Home",
+          title: "Customer Profile",
           url: "/customer/dashboard",
         },
-        {
-          title: "Customer Profile",
-          url: "/customer/profile",
-        },
+
         {
           title: "Customer Orders",
           url: "/customer/orders",
+        },
+        {
+          title: "Customer Reviews",
+          url: "/customer/reviews",
         },
       ],
     },

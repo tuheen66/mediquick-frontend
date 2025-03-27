@@ -52,7 +52,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <nav className="    flex-wrap justify-between items-center space-x-4 lg:gap-12">
+        <nav className=" flex-wrap justify-between items-center lg:space-x-8 lg:gap-12">
           <Link
             href="/shop"
             className={
@@ -63,7 +63,19 @@ const Navbar = () => {
           >
             Shop
           </Link>
+
           <Link
+            href="/health"
+            className={
+              pathname === "/health"
+                ? " text-orange-500 font-semibold   "
+                : "hover:text-slate-500 hover:underline"
+            }
+          >
+            Health Tips
+          </Link>
+          
+          {/* <Link
             href="/profile"
             className={
               pathname === "/profile"
@@ -72,9 +84,9 @@ const Navbar = () => {
             }
           >
             Profile
-          </Link>
+          </Link> */}
 
-          <Link
+          {/* <Link
             href="/orders"
             className={
               pathname === "/orders"
@@ -83,7 +95,31 @@ const Navbar = () => {
             }
           >
             Orders
+          </Link> */}
+
+          <Link
+            href="/about"
+            className={
+              pathname === "/about"
+                ? " text-orange-500 font-semibold   "
+                : "hover:text-slate-500 hover:underline"
+            }
+          >
+            About Us
           </Link>
+
+          <Link
+            href="/contact"
+            className={
+              pathname === "/contact"
+                ? " text-orange-500 font-semibold   "
+                : "hover:text-slate-500 hover:underline"
+            }
+          >
+            Contact Us
+          </Link>
+
+          
 
           {user?.role === "admin" && (
             <Link
@@ -104,26 +140,8 @@ const Navbar = () => {
             <FiShoppingCart className="text-xl" />
           </Link>
 
-          {/* {user ? (
-            <>
-              <p>{user?.email}</p>
-              <Button
-                onClick={handleLogout}
-                className="bg-orange-500 hover:bg-orange-800 text-white cursor-pointer rounded-none"
-              >
-                Logout
-              </Button>
-            </>
-          ) : (
-            <Link href="/login">
-              <Button className="bg-orange-500  text-white  hover:bg-orange-800 cursor-pointer rounded-none ">
-                Login
-              </Button>
-            </Link>
-          )} */}
           {user ? (
             <>
-              
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <AlignVerticalJustifyStart className="rounded-full">
@@ -141,7 +159,7 @@ const Navbar = () => {
                   <DropdownMenuItem>
                     <Link href={`/${user?.role}/dashboard`}>Dashboard</Link>
                   </DropdownMenuItem>
-                  
+
                   <DropdownMenuSeparator />
                   <DropdownMenuItem
                     className="bg-orange-500 text-white rounded-none cursor-pointer"
@@ -156,7 +174,7 @@ const Navbar = () => {
           ) : (
             <>
               <Link href="/login">
-                <Button className="rounded-full" variant="outline">
+                <Button className="rounded-none border-1 border-gray-500" >
                   Login
                 </Button>
               </Link>

@@ -17,7 +17,7 @@ const MedicineCard = ({ medicine }: { medicine: IMedicine }) => {
           />
           <div
             className="absolute top-2 right-15 lg:right-2 text-sm
-         bg-orange-400 text-white p-1"
+         bg-orange-500 text-white p-1"
           >
             TK {medicine.price}
           </div>

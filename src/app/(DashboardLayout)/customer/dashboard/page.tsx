@@ -1,9 +1,10 @@
-import React from 'react';
+import UserProfile from '@/components/userProfile/UserProfile';
+
 
 const CustomerDashboardPage = () => {
     return (
         <div>
-            <h2>Customer Dashboard Page</h2>
+           <UserProfile/>
         </div>
     );
 };

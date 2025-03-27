@@ -17,3 +17,10 @@ export interface MedicinesResponse {
   medicines: IMedicine[];
   hasMore: boolean;
 }
+
+export type TCategories = {
+  _id: string;
+  name: string;
+  icon: string;
+  description: string;
+};

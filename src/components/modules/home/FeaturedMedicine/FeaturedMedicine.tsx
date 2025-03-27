@@ -36,7 +36,7 @@ const FeaturedMedicine = () => {
 
   return (
     <div className="">
-      <h2 className="text-3xl text-gray-800 font-bold text-center my-8">Featured Medicines</h2>
+      <h2 className="text-3xl text-gray-800 font-bold text-center my-4">Featured Medicines</h2>
 
       {/* Search Bar */}
       <div className="mb-6 text-center p-4  ">

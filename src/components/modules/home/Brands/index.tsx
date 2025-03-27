@@ -18,100 +18,105 @@ import Image from "next/image";
 
 const Brands = () => {
   return (
-    <div className="mt-4 bg-gray-200 px-[5%] ">
-      <Swiper
-        className="mySwiper "
-        // install Swiper modules
-        modules={[Autoplay, A11y]}
-        spaceBetween={40}
-        slidesPerView={5}
-        loop={true}
-        autoplay
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-      >
-        <SwiperSlide>
-          <Image
-            src={brand1}
-            alt="brand1"
-            width={300}
-            height={300}
-            className="lg:w-36"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={brand2}
-            alt="brand1"
-            width={300}
-            height={300}
-            className="lg:w-36"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={brand3}
-            alt="brand1"
-            width={100}
-            height={100}
-            className="lg:mt-6"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={brand4}
-            alt="brand1"
-            width={300}
-            height={300}
-            className="lg:w-36"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={brand5}
-            alt="brand1"
-            width={300}
-            height={300}
-            className="lg:w-36"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={brand6}
-            alt="brand1"
-            width={300}
-            height={300}
-            className="lg:w-36"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={brand7}
-            alt="brand1"
-            width={300}
-            height={300}
-            className="lg:w-36"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={brand8}
-            alt="brand1"
-            width={300}
-            height={300}
-            className="w-36"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={brand9}
-            alt="brand1"
-            width={100}
-            height={100}
-            className=" w-28"
-          />
-        </SwiperSlide>
-      </Swiper>
+    <div>
+      <h2 className="text-center text-3xl text-gray-800 mt-8 font-bold">
+        Top Brands
+      </h2>
+      <div className="mt-4 px-[5%] ">
+        <Swiper
+          className="mySwiper "
+          // install Swiper modules
+          modules={[Autoplay, A11y]}
+          spaceBetween={40}
+          slidesPerView={5}
+          loop={true}
+          autoplay
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+        >
+          <SwiperSlide>
+            <Image
+              src={brand1}
+              alt="brand1"
+              width={300}
+              height={300}
+              className="lg:w-36"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={brand2}
+              alt="brand1"
+              width={300}
+              height={300}
+              className="lg:w-36"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={brand3}
+              alt="brand1"
+              width={100}
+              height={100}
+              className="lg:mt-6"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={brand4}
+              alt="brand1"
+              width={300}
+              height={300}
+              className="lg:w-36"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={brand5}
+              alt="brand1"
+              width={300}
+              height={300}
+              className="lg:w-36"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={brand6}
+              alt="brand1"
+              width={300}
+              height={300}
+              className="lg:w-36"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={brand7}
+              alt="brand1"
+              width={300}
+              height={300}
+              className="lg:w-36"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={brand8}
+              alt="brand1"
+              width={300}
+              height={300}
+              className="w-36"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={brand9}
+              alt="brand1"
+              width={100}
+              height={100}
+              className=" w-28"
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </div>
   );
 };

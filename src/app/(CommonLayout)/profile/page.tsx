@@ -1,12 +1,11 @@
-import UserProfile from "@/components/userProfile/UserProfile";
 
 
 const ProfilePage = () => {
-    return (
-        <div>
-           <UserProfile/>
-        </div>
-    );
+  return (
+    <div className="min-h-screen bg-gray-50">
+      
+    </div>
+  );
 };
 
 export default ProfilePage;

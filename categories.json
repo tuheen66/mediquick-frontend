@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Painkiller",
+    "icon": "https://i.ibb.co.com/9HBxcKdB/painkiller.png",
+    "description": "Effective painkillers for headaches, muscle pain, and chronic conditions."
+  },
+  {
+    "name": "Antibiotics",
+    "icon": "https://i.ibb.co.com/nMDbBTbC/antibiotics.png",
+    "description": "Fight infections with doctor-prescribed antibiotics."
+  },
+  {
+    "name": "Gastrointestinal",
+    "icon": "https://i.ibb.co.com/DPZf1CbH/gastrointestinal.png",
+    "description": "Medicines for acidity, indigestion, and digestive health."
+  },
+  {
+    "name": "Cardiovascular",
+    "icon": "https://i.ibb.co.com/v6TnV0BK/cardiovascular.png",
+    "description": "Manage blood pressure, cholesterol, and heart health."
+  },
+  {
+    "name": "Supplements",
+    "icon": "https://i.ibb.co.com/F4ZbHxzw/supplements.png",
+    "description": "Vitamins, minerals, and wellness supplements."
+  },
+  {
+    "name": "Allergy",
+    "icon": "https://i.ibb.co.com/vCTTT2fY/allergy.png",
+    "description": "Relief from allergies, sinusitis, and respiratory issues."
+  },
+  {
+    "name": "Diabetes",
+    "icon": "https://i.ibb.co.com/g5mzsHJ/diabetes.png",
+    "description": "Insulin, glucometers, and diabetes management tools."
+  },
+  {
+    "name": "Endocrine",
+    "icon": "https://i.ibb.co.com/hFr7G0NC/endocrine.png",
+    "description": "Hormonal treatments and thyroid medications."
+  }
+]

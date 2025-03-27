@@ -11,7 +11,7 @@ const CartPage = () => {
       <CartBanner />
       <div className="  text-neutral-content lg:mt-20 mb-12">
         <div className="flex flex-col justify-center items-center gap-8 my-4 mx-auto">
-          <h1 className=" text-3xl text-gray-800 font-bold">Your cart</h1>
+          
 
           <Link href={"/shop"}>
             <Button className="bg-orange-500 rounded-none hover:bg-orange-800 text-white cursor-pointer">
