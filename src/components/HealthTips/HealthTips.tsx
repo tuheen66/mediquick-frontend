@@ -3,8 +3,7 @@
 import { useState } from "react";
 import health from "@/assets/images/health.jpg";
 import Image from "next/image";
-import Link from "next/link";
-import { toast } from "sonner";
+
 
 type HealthTip = {
   id: number;

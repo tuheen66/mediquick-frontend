@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -27,7 +28,6 @@ const UpdateProfile = ({ user }: { user: any }) => {
   });
 
   const {
-    reset,
     formState: { isSubmitting },
   } = form;
 

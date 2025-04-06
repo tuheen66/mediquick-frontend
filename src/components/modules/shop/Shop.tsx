@@ -35,16 +35,16 @@ const sortOptions = [
 const Shop = () => {
   const [medicines, setMedicines] = useState<IMedicine[]>([]);
   const [filteredMedicines, setFilteredMedicines] = useState<IMedicine[]>([]);
-  const [minPrice, setMinPrice] = useState(""); // Reset after reload
-  const [maxPrice, setMaxPrice] = useState(""); // Reset after reload
-  const [sortBy, setSortBy] = useState(""); // Sorting state
-  const [currentPage, setCurrentPage] = useState(1); // Current page state
-  const itemsPerPage = 8; // Number of items per page
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [sortBy, setSortBy] = useState("");
+  const [searchText, setSearchText] = useState(""); // 🔍 Search state
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
 
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  // Get filters from URL query params
   const selectedCategory = searchParams.get("category") || "All";
   const selectedPrescription = searchParams.get("prescription") || "All";
 
@@ -82,6 +82,16 @@ const Shop = () => {
       filtered = filtered.filter((med) => med.price <= Number(maxPrice));
     }
 
+    // Filter by search text (name or category)
+    if (searchText.trim() !== "") {
+      const search = searchText.toLowerCase();
+      filtered = filtered.filter(
+        (med) =>
+          med.name.toLowerCase().includes(search) ||
+          med.category.toLowerCase().includes(search)
+      );
+    }
+
     // Apply sorting
     if (sortBy === "asc") {
       filtered = [...filtered].sort((a, b) => a.price - b.price);
@@ -90,6 +100,7 @@ const Shop = () => {
     }
 
     setFilteredMedicines(filtered);
+    setCurrentPage(1); // Reset to first page on filter change
   }, [
     selectedCategory,
     selectedPrescription,
@@ -97,16 +108,15 @@ const Shop = () => {
     maxPrice,
     sortBy,
     medicines,
+    searchText,
   ]);
 
-  // Update the URL with selected filters (excluding price and sorting)
   const handleFilterChange = (category: string, prescription: string) => {
     router.push(`?category=${category}&prescription=${prescription}`, {
       scroll: false,
     });
   };
 
-  // Pagination logic
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredMedicines.slice(
@@ -120,25 +130,34 @@ const Shop = () => {
     <div>
       <div className="relative w-full bg-black mb-12">
         <Image src={shop} alt="Contact Us" width={1400} height={400} />
-        <div className="absolute  top-0 right-0 text-gray-900 bg-black opacity-50 w-full h-full "></div>
-
+        <div className="absolute top-0 right-0 text-gray-900 bg-black opacity-50 w-full h-full"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center mb-10">
             <h1 className="text-3xl font-bold text-white sm:text-4xl mb-3">
               Your Medicine Shop
             </h1>
-            
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row  gap-2 justify-between mx-4">
+      <div className="flex flex-col lg:flex-row gap-2 justify-between mx-4">
         <div className="w-full lg:w-1/5">
-          {/* Filters Section */}
-          <div className="mb-4 flex flex-col md:flex-row lg:flex-col gap-4 flex-wrap justify-between  py-4 px-2  border border-gray-300">
+          <div className="mb-4 flex flex-col md:flex-row lg:flex-col gap-4 flex-wrap justify-between py-4 px-2 border border-gray-300">
+            {/* 🔍 Search Field */}
+            <div>
+              <label className="mr-2 text-gray-700">Search:</label>
+              <input
+                type="text"
+                placeholder="Search by name or category"
+                className="p-1 border border-gray-300 text-gray-700 w-full"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+              />
+            </div>
+
             {/* Category Filter */}
             <div>
-              <label className="mr-2  text-gray-700">Category:</label>
+              <label className="mr-2 text-gray-700">Category:</label>
               <select
                 className="p-1 border border-gray-300 text-gray-700"
                 value={selectedCategory}
@@ -154,9 +173,9 @@ const Shop = () => {
               </select>
             </div>
 
-            {/* Prescription Required Filter */}
+            {/* Prescription Filter */}
             <div>
-              <label className="mr-2  text-gray-700">
+              <label className="mr-2 text-gray-700">
                 Prescription Required:
               </label>
               <select
@@ -176,7 +195,7 @@ const Shop = () => {
 
             {/* Price Range Filter */}
             <div>
-              <label className="mr-2  text-gray-700 mb-2">Price Range:</label>
+              <label className="mr-2 text-gray-700 mb-2">Price Range:</label>
               <div>
                 <input
                   type="number"
@@ -195,9 +214,9 @@ const Shop = () => {
               </div>
             </div>
 
-            {/* Price Sorting Filter */}
+            {/* Sort by Price */}
             <div>
-              <label className="mr-2  text-gray-700">Sort by Price:</label>
+              <label className="mr-2 text-gray-700">Sort by Price:</label>
               <select
                 className="p-1 border border-gray-300 text-gray-700 mt-2"
                 value={sortBy}
@@ -213,14 +232,15 @@ const Shop = () => {
 
             {/* Reset Button */}
             <Button
-              className=" bg-orange-500 hover:bg-orange-700 text-white  rounded-none"
+              className="bg-orange-500 hover:bg-orange-700 text-white rounded-none"
               onClick={() => {
-                setMinPrice(""); // Reset min price
-                setMaxPrice(""); // Reset max price
-                setSortBy(""); // Reset sorting
+                setMinPrice("");
+                setMaxPrice("");
+                setSortBy("");
+                setSearchText("");
                 router.push(`?category=All&prescription=All`, {
                   scroll: false,
-                }); // Reset other filters
+                });
               }}
             >
               Reset Filters
@@ -228,17 +248,16 @@ const Shop = () => {
           </div>
         </div>
 
-        {/* Medicine Grid */}
-        <div className="w-full  lg:w-4/5 ">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+        {/* Medicines Grid */}
+        <div className="w-full lg:w-4/5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {currentItems.map((medicine) => (
               <MedicineCard key={medicine._id} medicine={medicine} />
             ))}
           </div>
 
-          {/* Pagination Controls */}
+          {/* Pagination */}
           <div className="flex justify-center mt-12">
-            {/* Previous Button */}
             <Button
               className="mr-2"
               disabled={currentPage === 1}
@@ -247,7 +266,6 @@ const Shop = () => {
               <FaLongArrowAltLeft />
             </Button>
 
-            {/* Page Number Buttons */}
             {Array.from({ length: totalPages }, (_, index) => (
               <Button
                 key={index + 1}
@@ -262,7 +280,6 @@ const Shop = () => {
               </Button>
             ))}
 
-            {/* Next Button */}
             <Button
               className="ml-2"
               disabled={currentPage === totalPages}

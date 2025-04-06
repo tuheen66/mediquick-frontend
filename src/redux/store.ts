@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./features/cartSlice";
 import checkoutReducer from "./features/checkoutSlice";

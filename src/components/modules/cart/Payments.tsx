@@ -2,8 +2,7 @@
 import { Button } from "@/components/ui/button";
 
 import { subTotalSelector } from "@/redux/features/cartSlice";
-
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useAppSelector } from "@/redux/hooks";
 
 import Link from "next/link";
 
@@ -21,9 +20,6 @@ export type IOrder = {
 const Payments = () => {
   const subTotal = useAppSelector(subTotalSelector).toFixed(2);
 
-  const dispatch = useAppDispatch();
-
-
   return (
     <div className=" rounded-md h-fit p-5 w-80">
       <h1 className="text-2xl font-bold">Cost of Medicine</h1>
@@ -32,10 +28,8 @@ const Payments = () => {
           <p className="text-gray-800 ">Total</p>
           <p className="font-semibold">BDT {subTotal}</p>
         </div>
-
-        
       </div>
-      
+
       <Link href={"/checkout"}>
         <Button className="w-full  py-5 rounded-none bg-orange-500 cursor-pointer hover:bg-orange-800 text-white">
           Proceed to checkout

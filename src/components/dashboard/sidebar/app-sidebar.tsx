@@ -73,9 +73,7 @@ const data = {
   ],
 };
 
-interface IUserProviderValues {
-  role: string | undefined;
-}
+
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const user = useUser();

@@ -35,7 +35,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" bg-gray-200  text-slate-700 py-2 shadow-xl sticky top-0 z-10  px-[5%]">
+    <div className=" bg-gray-200  text-slate-700 py-2 sticky top-0 z-10  px-[5%]">
       <div className="flex flex-col lg:flex-row gap-2 justify-between items-center">
         <div>
           <Link href="/" className="flex gap-2 items-center text-2xl font-bold">
@@ -212,9 +212,11 @@ const Navbar = () => {
         </nav>
 
         <div className="flex justify-center items-center gap-4">
-          <Link href="/cart">
-            <FiShoppingCart className="text-2xl text-orange-500" />
-          </Link>
+          {user && (
+            <Link href="/cart">
+              <FiShoppingCart className="text-2xl text-orange-500" />
+            </Link>
+          )}
 
           {user ? (
             <>

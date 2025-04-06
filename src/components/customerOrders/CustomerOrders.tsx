@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useUser } from "@/context/UserContext";
 
@@ -51,6 +52,7 @@ const CustomerOrders = () => {
   // console.log(user?.user?.userId);
   return (
     <div>
+      {loading && <p className="text-center text-gray-500">Loading...</p>}
       <Table >
         <TableHeader >
           <TableRow >

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import MedicineStock from "@/components/medicineStock/MedicineStock";
@@ -38,45 +39,52 @@ const AdminHome = () => {
 
   return (
     <div>
-      <div className="grid lg:grid-cols-3 gap-4 w-[90%] mx-auto mb-4">
-        <div className="flex flex-col justify-center items-center border-1 border-orange-600  p-4 w-72 h-40 space-y-8 mx-auto">
-          <p className="text-5xl font-bold text-orange-500">
+      <div className="grid lg:grid-cols-3 gap-8 w-[90%] mx-auto mb-8">
+        {/* Medicine Card */}
+        <div className="flex flex-col justify-center items-center bg-white rounded-xl shadow-md p-4 w-full h-48 space-y-4 mx-auto transition-all hover:shadow-lg border-l-4 border-orange-500">
+          <p className="text-4xl font-bold text-orange-500">
             {medicines?.length}
           </p>
-          <h2 className="text-2xl font-semibold text-gray-700">
-            Number of Medicines{" "}
+          <h2 className="text-xl font-semibold text-gray-600 uppercase tracking-wider">
+            Total Medicines
           </h2>
+          <p className="text-sm text-gray-400">Currently in inventory</p>
         </div>
-        <div className="flex flex-col justify-center items-center border-1 border-orange-600  p-4 w-72 h-40 space-y-8 mx-auto">
-          <p className="text-5xl font-bold text-orange-500">{orders?.length}</p>
-          <h2 className="text-2xl font-semibold text-gray-700">
-            Number of Orders{" "}
+
+        {/* Orders Card */}
+        <div className="flex flex-col justify-center items-center bg-white rounded-xl shadow-md p-4 w-full h-48 space-y-4 mx-auto transition-all hover:shadow-lg border-l-4 border-blue-500">
+          <p className="text-4xl font-bold text-blue-500">{orders?.length}</p>
+          <h2 className="text-xl font-semibold text-gray-600 uppercase tracking-wider">
+            Total Orders
           </h2>
+          <p className="text-sm text-gray-400">Processed this period</p>
         </div>
-        <div className="flex flex-col justify-center items-center border-1 border-orange-600  p-4 w-72 h-40 space-y-8 mx-auto">
-          <div className="flex">
-            <p className="text-5xl font-bold text-gray-700 ">
-              Tk{" "}
-              <span className="text-5xl font-bold text-orange-500">
-                {revenue}
-              </span>
-            </p>
+
+        {/* Revenue Card */}
+        <div className="flex flex-col justify-center items-center bg-white rounded-xl shadow-md p-4 w-full h-48 space-y-4 mx-auto transition-all hover:shadow-lg border-l-4 border-green-500">
+          <div className="flex items-baseline">
+            <span className="text-3xl font-medium text-gray-600 mr-2">Tk</span>
+            <p className="text-4xl font-bold text-green-500">{revenue}</p>
           </div>
-          <h2 className="text-2xl font-semibold text-gray-700">
+          <h2 className="text-xl font-semibold text-gray-600 uppercase tracking-wider">
             Total Revenue
           </h2>
+          <p className="text-sm text-gray-400">All-time earnings</p>
         </div>
       </div>
+
       <hr className="my-12 border-1 border-b border-gray-300" />
       <div>
         <h2 className=" text-2xl text-gray-800">
           Revenue per order as percentage of total revenue
         </h2>
+
         <RevenuePie />
       </div>
 
       <div>
         <h2 className=" text-2xl text-gray-800">Revenue per order</h2>
+
         <Revenue />
       </div>
 

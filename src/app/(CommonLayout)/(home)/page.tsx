@@ -5,6 +5,9 @@ import FeaturedMedicine from "@/components/modules/home/FeaturedMedicine/Feature
 import Overview from "@/components/modules/home/Overview/Overview";
 import Reviews from "@/components/modules/home/Reviews/Reviews";
 import Newsletter from "@/components/modules/home/Newsletter/Newsletter";
+import BMICalculator from "@/components/BMICalculator/BMICalculator";
+import TrustBadges from "@/components/TrustBadge/TrustBadges";
+
 
 const HomePage = () => {
   return (
@@ -16,7 +19,9 @@ const HomePage = () => {
         <Overview />
         <FeaturedMedicine />
         <Categories />
+        <BMICalculator/>
         <Reviews />
+        <TrustBadges />
       </div>
       <div className="lg:h-48">
         <Brands />

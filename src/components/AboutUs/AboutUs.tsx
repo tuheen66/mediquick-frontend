@@ -21,7 +21,7 @@ const AboutUs = () => {
               </span>
             </h1>
             <p className="mt-3 text-base text-gray-800 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              We're revolutionizing how people access healthcare products with
+              We are revolutionizing how people access healthcare products with
               fast, reliable delivery and expert advice.
             </p>
           </div>
@@ -46,7 +46,7 @@ const AboutUs = () => {
           <div className="mt-10">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                <img
+                <Image
                   className=" shadow-xl"
                   src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
                   alt="Pharmacy store"
@@ -56,7 +56,7 @@ const AboutUs = () => {
                 <p className="mt-4 text-lg text-gray-600">
                   Founded in 2020 during the global health crisis, Mediquick
                   began with a simple mission: to make healthcare accessible to
-                  everyone, especially those who couldn't leave their homes.
+                  everyone, especially those who could not leave their homes.
                   What started as a small local delivery service has grown into
                   a trusted online pharmacy serving thousands of customers
                   nationwide.
@@ -148,7 +148,7 @@ const AboutUs = () => {
           <div className="mt-10">
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
               <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-                <img
+                <Image
                   className="mx-auto h-40 w-40 rounded-full object-cover"
                   src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
                   alt="Dr. Sarah Johnson"
@@ -166,7 +166,7 @@ const AboutUs = () => {
               </div>
 
               <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-                <img
+                <Image
                   className="mx-auto h-40 w-40 rounded-full object-cover"
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
                   alt="Michael Chen"
@@ -184,7 +184,7 @@ const AboutUs = () => {
               </div>
 
               <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-                <img
+                <Image
                   className="mx-auto h-40 w-40 rounded-full object-cover"
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
                   alt="Emily Rodriguez"

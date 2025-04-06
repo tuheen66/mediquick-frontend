@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { getAllOrders } from "@/services/OrderService";
 import React, { useEffect, useState } from "react";
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from "recharts";
 import { IOrder } from "../checkout/OrderConfirm";
 
 // const data = [
@@ -32,7 +34,6 @@ const renderCustomizedLabel = ({
   innerRadius,
   outerRadius,
   percent,
-  index,
 }: any) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
@@ -80,13 +81,13 @@ const RevenuePie = () => {
   console.log(data);
 
   return (
-    <div className="w-[100%] h-[400px]">
+    <div className="w-[100%] h-[400px] flex flex-col justify-center">
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart width={600} height={400}>
+        <PieChart width={600} height={400} >
           <Pie
             data={data}
-            cx={200}
-            cy={200}
+            cx="50%"
+            cy="50%"
             labelLine={false}
             label={renderCustomizedLabel}
             outerRadius={150}
@@ -100,6 +101,7 @@ const RevenuePie = () => {
               />
             ))}
           </Pie>
+          <Legend/>
         </PieChart>
       </ResponsiveContainer>
     </div>

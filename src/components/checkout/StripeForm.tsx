@@ -1,6 +1,5 @@
 "use client";
 import { useUser } from "@/context/UserContext";
-import { grandTotalSelector } from "@/redux/features/cartSlice";
 import { useAppSelector } from "@/redux/hooks";
 import { makePaymentIntent } from "@/services/OrderService";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
@@ -42,11 +41,11 @@ const StripeForm = () => {
       };
 
       createPaymentIntent();
-    }, [price, makePaymentIntent]);
+    }, [price]);
 
 
 
-  const onSubmit = async (e: any) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const toastId = toast.loading("Creating...");
 

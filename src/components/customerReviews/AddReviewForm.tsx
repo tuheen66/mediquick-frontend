@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -23,12 +25,7 @@ import { userProfile } from "@/services/AuthService";
 const AddReviewForm = () => {
   const router = useRouter();
 
-  const [currentUser, setCurrentUser] = useState<{
-    name?: string | undefined;
-    review?: string | undefined;
-    image?: string;
-  }>({});
-  const [loading, setLoading] = useState(false);
+   const [, setLoading] = useState(false);
 
   const user = useUser();
   const userId = user?.user?.userId;

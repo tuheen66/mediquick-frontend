@@ -1,5 +1,4 @@
 import CartBanner from "@/components/cartBanner/CartBanner";
-import Address from "@/components/modules/cart/Address";
 import CartProduct from "@/components/modules/cart/CartProduct";
 import Payments from "@/components/modules/cart/Payments";
 import { Button } from "@/components/ui/button";

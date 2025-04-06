@@ -5,7 +5,7 @@ import { TCategories } from "@/types";
 
 import { useEffect, useState } from "react";
 import CategoriesCard from "./CategoriesCard";
-import Link from "next/link";
+
 
 const Categories = () => {
   const [categories, setCategories] = useState<TCategories[]>([]);

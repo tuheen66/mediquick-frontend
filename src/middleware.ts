@@ -5,7 +5,13 @@ type TRole = keyof typeof roleBasedPrivateRoutes;
 
 const authRoutes = ["/login", "/register"];
 const roleBasedPrivateRoutes = {
-  customer: [/^\/profile/, /^\/orders/, /^\/cart/, /^\/checkout/, /^\/customer/],
+  customer: [
+    /^\/profile/,
+    /^\/orders/,
+    /^\/cart/,
+    /^\/checkout/,
+    /^\/customer/,
+  ],
   admin: [/^\/admin/],
 };
 
@@ -18,7 +24,7 @@ export const middleware = async (request: NextRequest) => {
     } else {
       return NextResponse.redirect(
         new URL(
-          `http://localhost:3000/login?redirectPath=${pathname}`,
+          `http://mediquick-backend.vercel.app/login?redirectPath=${pathname}`,
           request.url
         )
       );
@@ -44,6 +50,6 @@ export const config = {
     "/cart",
     "/checkout",
     "/customer",
-    "/customer/:page"
+    "/customer/:page",
   ],
 };

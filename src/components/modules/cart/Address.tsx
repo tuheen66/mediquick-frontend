@@ -1,12 +1,7 @@
 "use client";
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-} from "@/components/ui/form";
+
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
 import {
   Select,
   SelectContent,
@@ -26,7 +21,6 @@ import {
   shippingAddressSelector,
 } from "@/redux/features/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import React, { use, useState } from "react";
 
 const Address = () => {
   const cartProducts = useAppSelector(orderedMedicinesSelector);
@@ -36,7 +30,6 @@ const Address = () => {
 
   const dispatch = useAppDispatch();
 
-  
   const requiresPrescription = cartProducts.some(
     (item) => item.prescriptionRequired === "yes"
   );
@@ -64,7 +57,10 @@ const Address = () => {
         <div className="mt-5">
           <Select onValueChange={(city) => handleCitySelect(city)}>
             <SelectTrigger className="mb-5 rounded-none">
-              <SelectValue placeholder="Select a city" className="rounded-none"/>
+              <SelectValue
+                placeholder="Select a city"
+                className="rounded-none"
+              />
             </SelectTrigger>
             <SelectContent className="bg-slate-100 rounded-none">
               {cities.map((city) => (
@@ -81,16 +77,16 @@ const Address = () => {
             className="border-1 border-gray-500 rounded-none w-full"
           />
 
-          {requiresPrescription && 
+          {requiresPrescription && (
             <div className="grid w-full max-w-sm items-center gap-1.5 mt-6">
-            <Input
-              onChange={handlePrescriptionLink}
-              type="text"
-              placeholder="write your prescription link here"
-              className="rounded-none"
-            />
-          </div>
-          }
+              <Input
+                onChange={handlePrescriptionLink}
+                type="text"
+                placeholder="write your prescription link here"
+                className="rounded-none"
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

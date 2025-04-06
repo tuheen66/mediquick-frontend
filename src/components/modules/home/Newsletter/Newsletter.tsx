@@ -7,10 +7,10 @@ import { toast } from "sonner";
 const Newsletter = () => {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const form = e.target;
+    const form = e.target as HTMLFormElement;
     form.reset();
 
     toast.success("Subscription added successfully");
