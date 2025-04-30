@@ -4,6 +4,9 @@ const TrustBadges = () => {
   return (
     <div className="bg-white py-8 ">
       <div className="max-w-[90%] mx-auto">
+        <h2 className="text-center text-3xl text-gray-800 my-4 font-bold">
+          Our Commitment
+        </h2>
         <div className="grid grid-cols-1 md:grid-cold-2 lg:grid-cols-3 gap-6">
           {/* Badge 1 - Genuine Medicines */}
           <div className="flex flex-col items-center p-6 bg-blue-50  shadow-sm hover:shadow-md transition-shadow">

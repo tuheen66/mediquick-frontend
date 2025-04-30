@@ -26,8 +26,10 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
-        <div className="flex-1">
-          <Image src={about} alt="aboutImage" width={800} height={450} />
+        <div className="flex-1 w-full">
+          <Image
+          className="w-full"
+          src={about} alt="aboutImage" width={800} height={450} />
         </div>
       </div>
 
@@ -47,6 +49,8 @@ const AboutUs = () => {
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
                 <Image
+                  width="1400"
+                  height="400"
                   className=" shadow-xl"
                   src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
                   alt="Pharmacy store"
@@ -149,6 +153,8 @@ const AboutUs = () => {
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
               <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
                 <Image
+                  width="200"
+                  height="200"
                   className="mx-auto h-40 w-40 rounded-full object-cover"
                   src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
                   alt="Dr. Sarah Johnson"
@@ -167,6 +173,8 @@ const AboutUs = () => {
 
               <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
                 <Image
+                  width="200"
+                  height="200"
                   className="mx-auto h-40 w-40 rounded-full object-cover"
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
                   alt="Michael Chen"
@@ -185,6 +193,8 @@ const AboutUs = () => {
 
               <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
                 <Image
+                width="400"
+                  height="400"
                   className="mx-auto h-40 w-40 rounded-full object-cover"
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
                   alt="Emily Rodriguez"

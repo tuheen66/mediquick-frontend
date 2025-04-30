@@ -233,7 +233,7 @@ const Navbar = () => {
                   </AlignVerticalJustifyStart>
                 </DropdownMenuTrigger>
 
-                <DropdownMenuContent>
+                <DropdownMenuContent className="bg-gray-200">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>

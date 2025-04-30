@@ -68,8 +68,8 @@ const HealthTips = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 mb-8">
-      <div className="relative w-full bg-black">
-        <Image src={health} alt="Contact Us" width={1400} height={400} />
+      <div className="relative w-full bg-black ">
+        <Image className="w-full" src={health} alt="Contact Us" width={1400} height={400} />
         <div className="absolute  top-0 right-0 text-gray-900 bg-black opacity-40 w-full h-full "></div>
 
         <div className="absolute inset-0 flex items-center justify-center">
